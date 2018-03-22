@@ -1,7 +1,6 @@
 <?php
 
 spl_autoload_register(function ($class_name) {
-    $directory = '';
     switch ($class_name) {
         case 'BasePage':
         case 'Component':
@@ -20,3 +19,5 @@ spl_autoload_register(function ($class_name) {
 });
 
 Component::mount(new BasePage([]));
+
+echo "home";

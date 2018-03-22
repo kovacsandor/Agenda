@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "build": "npm run clean-directory & npm run compile-scss && npm run beautify-css && npm run copy-php && npm run copy-project",
-    "beautify-css": "cd production/bt9fs3/css/ && node-sass --indent-type tab --indent-width 1 --output-style expanded ./style.css ./style.css",
-    "clean-directory": "rm -r production/bt9fs3/* & rm production/WT_Projekt_2017_18_tavasz_lev.html",
+    "beautify-css": "cd production/bt9fs3/css/ && node-sass --indent-type tab --indent-width 1 --output-style expanded style.css style.css",
+    "clean-directory": "rm -r production",
     "compile-scss": "node-sass --output-style compressed source/scss/index.scss production/bt9fs3/css/style.css",
-    "copy-php": "cp -r source/php/ production/bt9fs3/ && cd production/bt9fs3/ && mv ./php/index.php ./index.php",
-    "copy-project": "cp -r source/project/* production/"
+    "copy-php": "cp -r source/php production/bt9fs3 && cd production/bt9fs3 && mv php/page/* ./ && rm -r php/page",
+    "copy-project": "cp -r source/project/* production"
   },
   "dependencies": {
     "node-sass": "^4.7.2",
