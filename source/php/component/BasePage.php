@@ -3,7 +3,7 @@
 class BasePage extends Component
 {
 
-    private $url_css = 'css/style.css';
+    private $url_css = BASE_URL . '/css/style.css';
     private $document_title = 'GET DOCUMENT TITLE';
 
     public function __construct($children)
@@ -26,7 +26,7 @@ class BasePage extends Component
         Component::mount([
             new Header('Header'),
             new Main([
-                'Main',
+                '',
                 new UnorderedList([
                     new ListItem('Item:1'),
                     new ListItem(new Trust('<span>Item:2</span>')),
