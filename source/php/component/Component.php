@@ -2,7 +2,6 @@
 
 abstract class Component
 {
-
     protected $children;
 
     protected function __construct($children)

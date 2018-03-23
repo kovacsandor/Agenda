@@ -31,24 +31,7 @@ class Footer extends Component
                     </div>
                     <div class="<?= P; ?>-col <?= P; ?>--sm-50 <?= P; ?>--lg-25">
                         <h6>Navigation</h6>
-                        <nav>
-                            <ul>
-                                <?php
-                                foreach (Model::getMenu() as $item) {
-                                    if ($item->isVisible()) {
-                                        ?>
-                                        <li>
-                                            <a href="<?= $item->getLink(); ?>"
-                                               class="<?= P; ?>-list-link <?= P; ?>--teal <?= $item->isActive() ? P . "--active" : ""; ?>">
-                                                <?= $item->getLabel(); ?>
-                                            </a>
-                                        </li>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </ul>
-                        </nav>
+                        <?php Component::mount(new Menu(null, [])); ?>
                     </div>
                 </div>
             </div>

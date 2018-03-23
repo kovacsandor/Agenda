@@ -1,23 +1,24 @@
 <?php
 
-class Menu extends Component
+class Menu extends Container
 {
-    public function __construct($children)
+    public function __construct($properties, $children)
     {
-        parent::__construct($children);
+        parent::__construct($properties, $children);
     }
 
     protected function render()
     { ?>
-        <nav class="<?= P; ?>-menu-main">
-            <ul class="<?= P; ?>-menu-list">
+        <nav class="<?= $this->properties['isMain'] ? P . '-menu-main' : ''; ?>">
+            <ul class="<?= $this->properties['isMain'] ? P . '-menu-list' : ''; ?>">
                 <?php
                 foreach (Model::getMenu() as $item) {
                     if ($item->isVisible()) {
                         ?>
-                        <li class="<?= P; ?>-menu-item">
+                        <li class="<?= $this->properties['isMain'] ? P . '-menu-item' : ''; ?>">
                             <a href="<?= $item->getLink(); ?>"
-                               class="<?= P; ?>-menu-link <?= $item->isActive() ? P . "--active" : ""; ?>">
+                               class="<?= $this->properties['isMain'] ? P . '-menu-link' : P . '-list-link ' . P . '--teal'; ?>
+                                <?= $item->isActive() ? ' ' . P . '--active' : ''; ?>">
                                 <?= $item->getLabel(); ?>
                             </a>
                         </li>

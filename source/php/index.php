@@ -3,6 +3,7 @@
 spl_autoload_register(function ($class_name) {
     switch ($class_name) {
         case 'BasePage':
+        case 'Container':
         case 'Component':
         case 'Footer':
         case 'Header':
