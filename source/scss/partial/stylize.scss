@@ -7,6 +7,10 @@
     color: $C_BLUE_1;
   }
 
+  &:visited {
+    color: $C_BLUE_2;
+  }
+
   &.#{$P}--active {
     background: $C_BLUE_6;
     color: $C_BLUE_3;
@@ -14,6 +18,54 @@
     &:hover {
       background: $C_BLUE_7;
       color: $C_BLUE_4;
+    }
+  }
+}
+
+%button-grey {
+  background: $C_GREY_2;
+  color: $C_GREY_5;
+
+  &:hover {
+    background: $C_GREY_1;
+    color: $C_GREY_4;
+  }
+
+  &:visited {
+    color: $C_GREY_5;
+  }
+
+  &.#{$P}--active {
+    background: $C_GREY_3;
+    color: $C_GREY_6;
+
+    &:hover {
+      background: $C_GREY_4;
+      color: $C_GREY_7;
+    }
+  }
+}
+
+%button-teal {
+  background: white;
+  color: $C_TEAL_5;
+
+  &:hover {
+    background: $C_GREY_1;
+    color: $C_TEAL_6;
+  }
+
+  &:visited {
+    color: $C_TEAL_5;
+  }
+
+  &.#{$P}--active {
+    background: $C_TEAL_5;
+    color: white;
+
+    &:hover {
+      background: $C_TEAL_6;
+      color: $C_TEAL_1;
     }
   }
 }

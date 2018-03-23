@@ -26,7 +26,7 @@ class BasePage extends Component
         Component::mount([
             new Header([]),
             new Main([]),
-            new Footer('Footer'),
+            new Footer([]),
         ]);
         ?>
         </body>

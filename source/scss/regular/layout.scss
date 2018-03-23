@@ -1,7 +1,7 @@
 /*! Default */
 
 main {
-  background: $C_GREY_2;
+  background: $C_GREY_1;
   padding: $SIZE * 2 0;
 }
 
@@ -21,22 +21,16 @@ main {
   padding: 0 $SIZE;
   width: 100%;
 
-  &.#{$P}--sm {
-    @media(min-width: 540px) {
-      @include columns;
-    }
+  @media(min-width: 540px) {
+    @include columns(sm);
   }
 
-  &.#{$P}--md {
-    @media(min-width: 720px) {
-      @include columns;
-    }
+  @media(min-width: 720px) {
+    @include columns(md);
   }
 
-  &.#{$P}--lg {
-    @media(min-width: 960px) {
-      @include columns;
-    }
+  @media(min-width: 960px) {
+    @include columns(lg);
   }
 }
 

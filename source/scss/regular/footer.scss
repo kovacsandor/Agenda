@@ -1,5 +1,32 @@
-/*! Menu */
+/*! Footer */
 footer {
+  background: $C_GREY_2;
+  color: $C_GREY_7;
+  padding-top: $SIZE * 2;
+}
 
+.#{$P}-copyright {
+  background: $C_GREY_4;
+  margin-top: $SIZE * 2;
+  padding: $SIZE * 2 $SIZE;
+  text-align: center;
+}
 
+.#{$P}-list-link {
+  @extend %button-grey;
+  @extend %transition;
+  display: block;
+  padding: $SIZE / 2 $SIZE;
+
+  &.#{$P}--blue {
+    @extend %button-grey;
+  }
+
+  &.#{$P}--grey {
+    @extend %button-grey;
+  }
+
+  &.#{$P}--teal {
+    @extend %button-teal;
+  }
 }

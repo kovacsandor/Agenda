@@ -7,9 +7,24 @@
 }
 
 body {
-  background: $C_GREY_3;
+  background: $C_GREY_4;
   color: $C_GREY_6;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
+
+a {
+  @extend %unstyle-link;
+  color: $C_TEAL_6;
+
+  &:visited {
+    color: $C_PURPLE_5;
+  }
+}
+
+ul {
+  @extend %unstyle-list;
+  padding-left: $SIZE;
+}
+
