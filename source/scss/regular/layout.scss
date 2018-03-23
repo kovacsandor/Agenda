@@ -1,0 +1,50 @@
+/*! Default */
+
+main {
+  background: $C_GREY_2;
+  padding: $SIZE * 2 0;
+}
+
+.#{$P}-container {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 0 $SIZE;
+}
+
+.#{$P}-row {
+  @extend %clearfix;
+  margin: 0 $SIZE * -1;
+}
+
+.#{$P}-col {
+  float: left;
+  padding: 0 $SIZE;
+  width: 100%;
+
+  &.#{$P}--sm {
+    @media(min-width: 540px) {
+      @include columns;
+    }
+  }
+
+  &.#{$P}--md {
+    @media(min-width: 720px) {
+      @include columns;
+    }
+  }
+
+  &.#{$P}--lg {
+    @media(min-width: 960px) {
+      @include columns;
+    }
+  }
+}
+
+.#{$P}-section {
+  padding: $SIZE;
+
+  &.#{$P}--white {
+    @extend %box-shadow;
+    background: white;
+  }
+}

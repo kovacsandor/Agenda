@@ -1,0 +1,15 @@
+/*! Default */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $C_GREY_3;
+  color: $C_GREY_6;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}

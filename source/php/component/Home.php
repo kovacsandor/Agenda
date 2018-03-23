@@ -10,7 +10,7 @@ class Home extends Component
 
     protected function render()
     { ?>
-        <section>
+        <section class="<?= P; ?>-section <?= P; ?>--white">
             <h1>Home</h1>
             <?php
             Component::mount($this->children);

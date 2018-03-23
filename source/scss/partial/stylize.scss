@@ -1,0 +1,27 @@
+%button-blue {
+  background: $C_BLUE_5;
+  color: $C_BLUE_2;
+
+  &:hover {
+    background: $C_BLUE_4;
+    color: $C_BLUE_1;
+  }
+
+  &.#{$P}--active {
+    background: $C_BLUE_6;
+    color: $C_BLUE_3;
+
+    &:hover {
+      background: $C_BLUE_7;
+      color: $C_BLUE_4;
+    }
+  }
+}
+
+%transition {
+  transition: all 0.1s;
+
+  &:hover {
+    transition: all 0s;
+  }
+}

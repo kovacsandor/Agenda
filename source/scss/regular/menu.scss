@@ -1,0 +1,26 @@
+/*! Menu */
+nav {
+  @extend %box-shadow;
+  @extend %clearfix;
+  background: $C_BLUE_5;
+}
+
+.#{$P}-menu-list {
+  @extend %unstyle-list;
+  display: block;
+  float: right;
+}
+
+.#{$P}-menu-item {
+  @extend %unstyle-list;
+  display: block;
+  float: left;
+}
+
+.#{$P}-menu-link {
+  @extend %button-blue;
+  @extend %transition;
+  @extend %unstyle-link;
+  display: inline-block;
+  padding: $SIZE $SIZE * 2;
+}

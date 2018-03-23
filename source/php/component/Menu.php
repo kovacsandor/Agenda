@@ -17,7 +17,7 @@ class Menu extends Component
                         ?>
                         <li class="<?= P; ?>-menu-item">
                             <a href="<?= $item->getLink(); ?>"
-                               class="<?= P; ?>-menu-link <?= $item->isActive() ? P . "--active" : ""; ?>">
+                               class="<?= P; ?>-menu-link <?= P; ?>-loads <?= $item->isActive() ? P . "--active" : ""; ?>">
                                 <?= $item->getLabel(); ?>
                             </a>
                         </li>

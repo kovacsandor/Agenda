@@ -10,7 +10,7 @@ class Login extends Component
 
     protected function render()
     { ?>
-        <section>
+        <section class="<?= P; ?>-section <?= P; ?>--white">
             <h1>Login</h1>
             <?php
             Component::mount($this->children);

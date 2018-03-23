@@ -10,7 +10,7 @@ class NonExistent extends Component
 
     protected function render()
     { ?>
-        <section>
+        <section class="<?= P; ?>-section <?= P; ?>--white">
             <h1>Page not found</h1>
             <?php
             Component::mount($this->children);

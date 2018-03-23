@@ -1,3 +1,15 @@
+//Normalize
 @import "../../node_modules/normalize.css/normalize";
+//Variables
 @import "variables";
-@import "regular/test";
+//Partials
+@import "partial/box-shadow";
+@import "partial/clearfix";
+@import "partial/columns";
+@import "partial/stylize";
+@import "partial/unstyle";
+//Regulars
+@import "regular/basic";
+@import "regular/footer";
+@import "regular/layout";
+@import "regular/menu";
