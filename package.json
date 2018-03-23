@@ -2,13 +2,14 @@
   "name": "Agenda",
   "version": "0.0.1",
   "scripts": {
-    "build": "npm run directory & npm run scss && npm run css && npm run php && npm run project && npm run root",
-    "css": "cd production/bt9fs3/css/ && node-sass --indent-type tab --indent-width 1 --output-style expanded style.css style.css",
-    "directory": "rm -r production",
-    "root": "cp -r source/.htaccess production/bt9fs3 && cd production/bt9fs3 && mv php/index.php ./index.php",
+    "build": "rm -r production & npm run compile-css && npm run copy-all",
+    "css-beautify": "cd production/bt9fs3/css && node-sass --indent-type tab --indent-width 1 --output-style expanded style.css style.css",
+    "copy-all": "npm run php && npm run project && npm run root",
+    "compile-css": "npm run run-sass && npm run css-beautify",
     "php": "cp -r source/php production/bt9fs3 && cd production/bt9fs3 && mv php/page/* ./ && rm -r php/page",
     "project": "cp -r source/project/* production",
-    "scss": "node-sass --output-style compressed source/scss/index.scss production/bt9fs3/css/style.css"
+    "root": "cp -r source/.htaccess production/bt9fs3 && cd production/bt9fs3 && mv php/index.php ./index.php",
+    "run-sass": "node-sass --output-style compressed source/scss/index.scss production/bt9fs3/css/style.css"
   },
   "dependencies": {
     "node-sass": "^4.7.2",

@@ -12,6 +12,7 @@ class Header extends Component
     { ?>
         <header>
             <?php
+            Component::mount(new Menu([]));
             Component::mount($this->children);
             ?>
         </header>

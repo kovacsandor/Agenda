@@ -24,9 +24,8 @@ class BasePage extends Component
         <body>
         <?php
         Component::mount([
-            new Header('Header'),
+            new Header([]),
             new Main([
-                '',
                 new UnorderedList([
                     new ListItem('Item:1'),
                     new ListItem(new Trust('<span>Item:2</span>')),
