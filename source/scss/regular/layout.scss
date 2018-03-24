@@ -1,9 +1,4 @@
-/*! Default */
-
-main {
-  background: $C_GREY_1;
-  padding: $SIZE * 2 0;
-}
+/*! Layout */
 
 .#{$P}-container {
   margin: 0 auto;
@@ -31,14 +26,5 @@ main {
 
   @media(min-width: 960px) {
     @include columns(lg);
-  }
-}
-
-.#{$P}-section {
-  padding: $SIZE;
-
-  &.#{$P}--white {
-    @extend %box-shadow;
-    background: white;
   }
 }

@@ -1,0 +1,15 @@
+/*! Content */
+
+main {
+  background: $C_GREY_1;
+  padding: $SIZE * 2 0;
+}
+
+.#{$P}-section {
+  padding: $SIZE;
+
+  &.#{$P}--white {
+    @extend %box-shadow;
+    background: white;
+  }
+}

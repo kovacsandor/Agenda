@@ -1,15 +1,4 @@
 /*! Typography */
-
-%heading-big {
-  font-weight: 400;
-  margin: 0 0 $SIZE * 2;
-}
-
-%heading-small {
-  font-weight: 600;
-  margin: 0 0 $SIZE;
-}
-
 h1 {
   @extend %heading-big;
   font-size: 48px;

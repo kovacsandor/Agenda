@@ -12,6 +12,10 @@ class Home extends Component
     { ?>
         <section class="<?= P; ?>-section <?= P; ?>--white">
             <h1>Home</h1>
+            <div class="<?= P; ?>-button-container">
+                <button class="<?= P; ?>-button <?= P; ?>--active">Button</button>
+                <button class="<?= P; ?>-button">Button</button>
+            </div>
             <?php
             Component::mount($this->children);
             ?>

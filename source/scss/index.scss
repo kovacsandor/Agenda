@@ -4,12 +4,16 @@
 @import "variables";
 //Partials
 @import "partial/box-shadow";
+@import "partial/button";
 @import "partial/clearfix";
 @import "partial/columns";
-@import "partial/stylize";
+@import "partial/transition";
+@import "partial/typography";
 @import "partial/unstyle";
 //Regulars
 @import "regular/basic";
+@import "regular/button";
+@import "regular/content";
 @import "regular/footer";
 @import "regular/layout";
 @import "regular/menu";

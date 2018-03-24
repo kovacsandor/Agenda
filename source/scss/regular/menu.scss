@@ -21,11 +21,3 @@ nav {
   display: block;
   float: left;
 }
-
-.#{$P}-menu-link {
-  @extend %button-blue;
-  @extend %transition;
-  @extend %unstyle-link;
-  display: inline-block;
-  padding: $SIZE $SIZE * 2;
-}

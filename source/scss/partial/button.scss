@@ -1,9 +1,11 @@
 %button-blue {
   background: $C_BLUE_5;
+  border-color: $C_BLUE_5;
   color: $C_BLUE_2;
 
   &:hover {
     background: $C_BLUE_4;
+    border-color: $C_BLUE_4;
     color: $C_BLUE_1;
   }
 
@@ -13,10 +15,12 @@
 
   &.#{$P}--active {
     background: $C_BLUE_6;
+    border-color: $C_BLUE_6;
     color: $C_BLUE_3;
 
     &:hover {
       background: $C_BLUE_7;
+      border-color: $C_BLUE_7;
       color: $C_BLUE_4;
     }
   }
@@ -24,10 +28,12 @@
 
 %button-grey {
   background: $C_GREY_2;
+  border-color: $C_GREY_2;
   color: $C_GREY_5;
 
   &:hover {
     background: $C_GREY_1;
+    border-color: $C_GREY_1;
     color: $C_GREY_4;
   }
 
@@ -37,10 +43,12 @@
 
   &.#{$P}--active {
     background: $C_GREY_3;
+    border-color: $C_GREY_3;
     color: $C_GREY_6;
 
     &:hover {
       background: $C_GREY_4;
+      border-color: $C_GREY_4;
       color: $C_GREY_7;
     }
   }
@@ -48,10 +56,12 @@
 
 %button-teal {
   background: white;
+  border-color: $C_TEAL_4;
   color: $C_TEAL_5;
 
   &:hover {
     background: $C_GREY_1;
+    border-color: $C_TEAL_5;
     color: $C_TEAL_6;
   }
 
@@ -61,19 +71,41 @@
 
   &.#{$P}--active {
     background: $C_TEAL_5;
+    border-color: $C_TEAL_5;
     color: white;
 
     &:hover {
       background: $C_TEAL_6;
+      border-color: $C_TEAL_6;
       color: $C_TEAL_1;
     }
   }
 }
 
-%transition {
-  transition: all 0.1s;
+%button-white {
+  background: white;
+  border-color: $C_GREY_2;
+  color: $C_GREY_6;
 
   &:hover {
-    transition: all 0s;
+    background: $C_GREY_1;
+    border-color: $C_GREY_3;
+    color: $C_GREY_7;
+  }
+
+  &:visited {
+    color: $C_GREY_6;
+  }
+
+  &.#{$P}--active {
+    background: $C_GREY_2;
+    border-color: $C_GREY_4;
+    color: $C_GREY_7;
+
+    &:hover {
+      background: $C_GREY_3;
+      border-color: $C_GREY_5;
+      color: white;
+    }
   }
 }

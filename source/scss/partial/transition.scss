@@ -1,0 +1,7 @@
+%transition {
+  transition: all 0.1s;
+
+  &:hover {
+    transition: all 0s;
+  }
+}

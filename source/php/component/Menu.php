@@ -17,7 +17,8 @@ class Menu extends Container
                         ?>
                         <li class="<?= $this->properties['isMain'] ? P . '-menu-item' : ''; ?>">
                             <a href="<?= $item->getLink(); ?>"
-                               class="<?= $this->properties['isMain'] ? P . '-menu-link' : P . '-list-link ' . P . '--teal'; ?>
+                               class="<?= P ?>-button <?= $this->properties['isMain'] ? P . '--menu' :
+                                   P . '--list ' . P . '--teal'; ?>
                                 <?= $item->isActive() ? ' ' . P . '--active' : ''; ?>">
                                 <?= $item->getLabel(); ?>
                             </a>
