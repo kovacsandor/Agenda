@@ -29,6 +29,9 @@ class BasePage extends Component
             new Footer([]),
         ]);
         ?>
+        <script>
+
+        </script>
         </body>
         </html>
         <?php ;

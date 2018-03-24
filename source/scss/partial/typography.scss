@@ -1,9 +1,19 @@
 %heading-big {
   font-weight: 400;
-  margin: 0 0 $SIZE * 2;
+  margin: $SIZE * 2 0;
 }
 
 %heading-small {
   font-weight: 600;
-  margin: 0 0 $SIZE;
+  margin: $SIZE 0;
+}
+
+%typography-regular {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+%typography-h6 {
+  font-size: 16px;
+  line-height: 22px;
 }

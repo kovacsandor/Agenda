@@ -13,6 +13,7 @@ spl_autoload_register(function ($class_name) {
         case 'Main':
         case 'Menu':
         case 'NonExistent':
+        case 'Registration':
         case 'Trust':
         case 'UnorderedList':
             $directory = 'php/component';

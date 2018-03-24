@@ -23,7 +23,10 @@ class Main extends Component
                         $page = new Home([$child]);
                         break;
                     case 'login.php':
-                        $page = new Login([$child]);
+                        $page = new Login([]);
+                        break;
+                    case 'registration.php':
+                        $page = new Registration([]);
                         break;
                     default:
                         $page = new NonExistent([$child]);

@@ -1,0 +1,55 @@
+/*! Form */
+
+legend {
+  font-style: italic;
+  padding: 0 $SIZE / 2;
+}
+
+fieldset {
+  border: solid 1px $C_GREY_2;
+  margin: 0 0 $SIZE;
+  padding: $SIZE / 2 - 1 $SIZE;
+
+  label {
+    display: inline;
+    font-style: normal;
+    margin: 0 $SIZE 0 0;
+  }
+}
+
+label {
+  display: block;
+  font-style: italic;
+  margin-bottom: $SIZE;
+  cursor: pointer;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select,
+textarea {
+  @extend %typography-regular;
+  border: solid 1px $C_GREY_2;
+  color: $C_GREY_6;;
+  display: block;
+  padding: $SIZE / 2 - 1 $SIZE;
+  width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+  margin-left: $SIZE / 2;
+}
+
+textarea {
+  resize: vertical;
+}
+
+&.#{$P}-required {
+  &:after {
+    color: $C_RED_4;
+    content: '*';
+  }
+}

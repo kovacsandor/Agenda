@@ -10,8 +10,6 @@ body {
   background: $C_GREY_4;
   color: $C_GREY_6;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
 }
 
 a {
@@ -26,5 +24,51 @@ a {
 ul {
   @extend %unstyle-list;
   padding-left: $SIZE;
+}
+
+button,
+input,
+html,
+textarea {
+  @extend %typography-regular;
+}
+
+p {
+  margin: 0 0 $SIZE;
+}
+
+h1 {
+  @extend %heading-big;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+h2 {
+  @extend %heading-big;
+  font-size: 32px;
+  line-height: 43px;
+}
+
+h3 {
+  @extend %heading-big;
+  font-size: 28px;
+  line-height: 38px;
+}
+
+h4 {
+  @extend %heading-small;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+h5 {
+  @extend %heading-small;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h6 {
+  @extend %heading-small;
+  @extend %typography-h6;
 }
 

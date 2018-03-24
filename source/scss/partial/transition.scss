@@ -1,5 +1,6 @@
 %transition {
-  transition: all 0.1s;
+  transition-delay: 0.1s;
+  transition-property: background-color, border-color, color;
 
   &:hover {
     transition: all 0s;
