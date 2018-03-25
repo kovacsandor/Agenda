@@ -2,7 +2,6 @@
 
 class Login extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -10,11 +9,11 @@ class Login extends Component
 
     protected function render()
     { ?>
-        <section class="<?= P; ?>-section <?= P; ?>--white">
+        <section class="<?= P ?>-section <?= P ?>--white">
             <h1>Login</h1>
             <form>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Name
                     </span>
                     <input name="name"
@@ -22,20 +21,20 @@ class Login extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Password
                     </span>
                     <input name="password"
                            type="password"
                            required>
                 </label>
-                <div class="<?= P; ?>-button-container">
-                    <button class="<?= P; ?>-button <?= P; ?>--blue"
+                <div class="<?= P ?>-button-container">
+                    <button class="<?= P ?>-button <?= P ?>--blue"
                             type="submit">
                         Submit
                     </button>
                     <a href="registration.php"
-                       class="<?= P; ?>-button <?= P; ?>--teal">
+                       class="<?= P ?>-button <?= P ?>--teal">
                         Registration
                     </a>
                 </div>

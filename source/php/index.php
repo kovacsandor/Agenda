@@ -8,8 +8,10 @@ spl_autoload_register(function ($class_name) {
         case 'Footer':
         case 'Header':
         case 'Home':
+        case 'Icon':
         case 'ListItem':
         case 'Login':
+        case 'Logo':
         case 'Main':
         case 'Menu':
         case 'NonExistent':

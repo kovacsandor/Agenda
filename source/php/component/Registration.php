@@ -2,7 +2,6 @@
 
 class Registration extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -10,11 +9,11 @@ class Registration extends Component
 
     protected function render()
     { ?>
-        <section class="<?= P; ?>-section <?= P; ?>--white">
+        <section class="<?= P ?>-section <?= P ?>--white">
             <h1>Registration</h1>
             <form>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Name
                     </span>
                     <input name="name"
@@ -22,7 +21,7 @@ class Registration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Password
                     </span>
                     <input name="password"
@@ -30,7 +29,7 @@ class Registration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Password again
                     </span>
                     <input name="password-again"
@@ -38,7 +37,7 @@ class Registration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Email
                     </span>
                     <input name="email"
@@ -105,7 +104,7 @@ class Registration extends Component
                     </label>
                 </fieldset>
                 <label>
-                    <span class="<?= P; ?>-required">
+                    <span class="<?= P ?>-required">
                         Confirm reading terms and conditions
                     </span>
                     <input name="terms"
@@ -113,8 +112,8 @@ class Registration extends Component
                            value="confirmed"
                            required>
                 </label>
-                <div class="<?= P; ?>-button-container">
-                    <button class="<?= P; ?>-button <?= P; ?>--blue"
+                <div class="<?= P ?>-button-container">
+                    <button class="<?= P ?>-button <?= P ?>--blue"
                             type="submit">
                         Submit
                     </button>

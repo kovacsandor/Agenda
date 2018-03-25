@@ -2,26 +2,31 @@
   background: $C_BLUE_5;
   border-color: $C_BLUE_5;
   color: $C_BLUE_2;
+  fill: $C_BLUE_2;
 
   &:hover {
     background: $C_BLUE_4;
     border-color: $C_BLUE_4;
     color: $C_BLUE_1;
+    fill: $C_BLUE_1;
   }
 
   &:visited {
     color: $C_BLUE_2;
+    fill: $C_BLUE_2;
   }
 
   &.#{$P}--active {
     background: $C_BLUE_6;
     border-color: $C_BLUE_6;
     color: $C_BLUE_3;
+    fill: $C_BLUE_3;
 
     &:hover {
       background: $C_BLUE_7;
       border-color: $C_BLUE_7;
       color: $C_BLUE_4;
+      fill: $C_BLUE_4;
     }
   }
 }

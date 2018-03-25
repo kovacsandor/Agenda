@@ -2,7 +2,6 @@
 
 class NonExistent extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -10,7 +9,7 @@ class NonExistent extends Component
 
     protected function render()
     { ?>
-        <section class="<?= P; ?>-section <?= P; ?>--white">
+        <section class="<?= P ?>-section <?= P ?>--white">
             <h1>Page not found</h1>
             <?php
             Component::mount($this->children);

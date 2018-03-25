@@ -2,7 +2,6 @@
 
 class Home extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -10,11 +9,11 @@ class Home extends Component
 
     protected function render()
     { ?>
-        <section class="<?= P; ?>-section <?= P; ?>--white">
+        <section class="<?= P ?>-section <?= P ?>--white">
             <h1>Home</h1>
-            <div class="<?= P; ?>-button-container">
-                <button class="<?= P; ?>-button <?= P; ?>--active">Button</button>
-                <button class="<?= P; ?>-button">Button</button>
+            <div class="<?= P ?>-button-container">
+                <button class="<?= P ?>-button <?= P ?>--active">Button</button>
+                <button class="<?= P ?>-button">Button</button>
             </div>
             <?php
             Component::mount($this->children);

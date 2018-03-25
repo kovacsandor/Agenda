@@ -1,6 +1,6 @@
 <?php
 
-class ListItem extends Component
+class Logo extends Component
 {
     public function __construct($children)
     {
@@ -9,11 +9,12 @@ class ListItem extends Component
 
     protected function render()
     { ?>
-        <li>
+        <div class="<?= P ?>-logo-container">
             <?php
+            Component::mount(new Trust(file_get_contents('svg/logo.svg')));
             Component::mount($this->children);
             ?>
-        </li>
+        </div>
         <?php ;
     }
 }

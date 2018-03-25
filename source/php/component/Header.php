@@ -2,7 +2,6 @@
 
 class Header extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);

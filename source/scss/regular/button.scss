@@ -24,6 +24,10 @@
     @extend %button-blue;
     margin: 0;
     padding: $SIZE - 1 $SIZE * 2;
+
+    @media(min-width: $BREAKPOINT_MD) {
+      padding: $SIZE * 2 - 1 $SIZE * 2;
+    }
   }
 
   &.#{$P}--blue {

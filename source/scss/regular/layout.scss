@@ -2,7 +2,7 @@
 
 .#{$P}-container {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: $CONTAINER_WIDTH;
   padding: 0 $SIZE;
 }
 
@@ -16,15 +16,15 @@
   padding: 0 $SIZE;
   width: 100%;
 
-  @media(min-width: 540px) {
+  @media(min-width: $BREAKPOINT_SM) {
     @include columns(sm);
   }
 
-  @media(min-width: 720px) {
+  @media(min-width: $BREAKPOINT_MD) {
     @include columns(md);
   }
 
-  @media(min-width: 960px) {
+  @media(min-width: $BREAKPOINT_LG) {
     @include columns(lg);
   }
 }

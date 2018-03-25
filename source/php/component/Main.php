@@ -2,7 +2,6 @@
 
 class Main extends Component
 {
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -11,7 +10,7 @@ class Main extends Component
     protected function render()
     { ?>
         <main>
-            <div class="<?= P; ?>-container">
+            <div class="<?= P ?>-container">
                 <?php
                 $child = new UnorderedList([
                     new ListItem('Item:1'),

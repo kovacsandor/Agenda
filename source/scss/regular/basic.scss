@@ -10,6 +10,11 @@ body {
   background: $C_GREY_4;
   color: $C_GREY_6;
   font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: $SIZE * 4;
+
+  @media(min-width: $BREAKPOINT_MD) {
+    margin-top: $SIZE * 6;
+  }
 }
 
 a {

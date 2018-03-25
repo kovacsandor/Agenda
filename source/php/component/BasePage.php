@@ -2,7 +2,6 @@
 
 class BasePage extends Component
 {
-
     private $url_css = BASE_URL . '/css/style.css';
     private $document_title = 'GET DOCUMENT TITLE';
 
@@ -18,8 +17,8 @@ class BasePage extends Component
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="stylesheet" href="<?php echo $this->url_css; ?>">
-            <title><?php echo $this->document_title; ?></title>
+            <link rel="stylesheet" href="<?php echo $this->url_css ?>">
+            <title><?php echo $this->document_title ?></title>
         </head>
         <body>
         <?php
