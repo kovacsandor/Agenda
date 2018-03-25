@@ -7,15 +7,15 @@ spl_autoload_register(function ($class_name) {
         case 'Component':
         case 'Footer':
         case 'Header':
-        case 'Home':
         case 'Icon':
         case 'ListItem':
-        case 'Login':
         case 'Logo':
         case 'Main':
         case 'Menu':
-        case 'NonExistent':
-        case 'Registration':
+        case 'PageHome':
+        case 'PageLogin':
+        case 'PageNotFound':
+        case 'PageRegistration':
         case 'Trust':
         case 'UnorderedList':
             $directory = 'php/component';
@@ -25,6 +25,10 @@ spl_autoload_register(function ($class_name) {
         case 'Renderable':
             $directory = 'php/model';
             break;
+        case 'Registration':
+        case 'Request':
+            $directory = 'php/request';
+            break;
         default:
             throw new Exception('Unregistered class: ' . $class_name);
     }
@@ -32,5 +36,9 @@ spl_autoload_register(function ($class_name) {
 });
 
 include './php/globals.php';
+
+if (sizeof($_POST) > 0) {
+    new Registration();
+}
 
 Component::mount(new BasePage([]));

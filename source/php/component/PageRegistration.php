@@ -1,6 +1,6 @@
 <?php
 
-class Registration extends Component
+class PageRegistration extends Component
 {
     public function __construct($children)
     {
@@ -11,7 +11,8 @@ class Registration extends Component
     { ?>
         <section class="<?= P ?>-section <?= P ?>--white">
             <h1>Registration</h1>
-            <form>
+            <form action="<?= $_SERVER['PHP_SELF'] ?>"
+                  method="post">
                 <label>
                     <span class="<?= P ?>-required">
                         Name
@@ -47,16 +48,30 @@ class Registration extends Component
                 <label>
                     About
                     <textarea name="about"
-                              rows="3">
-                    </textarea>
+                              rows="3"></textarea>
                 </label>
                 <label>
-                    Gender
-                    <select name="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                    Profile picture
+                    <input name="image"
+                           type="file">
+                </label>
+                <label>
+                    Education
+                    <select name="education">
+                        <option value="elementary">Elementary</option>
+                        <option value="high-school">High school</option>
+                        <option value="college">College</option>
+                        <option value="university">University</option>
                     </select>
                 </label>
+<!--                <label>-->
+<!--                    Role-->
+<!--                    <select name="role">-->
+<!--                        <option value="user">User</option>-->
+<!--                        <option value="revisor">Revisor</option>-->
+<!--                        <option value="admin">Admin</option>-->
+<!--                    </select>-->
+<!--                </label>-->
                 <fieldset>
                     <legend>
                         Gender
@@ -76,29 +91,29 @@ class Registration extends Component
                 </fieldset>
                 <fieldset>
                     <legend>
-                        Where you heard from us
+                        Where did you hear from us?
                     </legend>
                     <label>
                         Papers
-                        <input name="where"
+                        <input name="where[]"
                                type="checkbox"
                                value="papers">
                     </label>
                     <label>
                         Internet
-                        <input name="where"
+                        <input name="where[]"
                                type="checkbox"
-                               value="Internet">
+                               value="internet">
                     </label>
                     <label>
                         School
-                        <input name="where"
+                        <input name="where[]"
                                type="checkbox"
                                value="school">
                     </label>
                     <label>
                         Office
-                        <input name="where"
+                        <input name="where[]"
                                type="checkbox"
                                value="office">
                     </label>

@@ -19,16 +19,16 @@ class Main extends Component
                 ]);
                 switch (basename($_SERVER['PHP_SELF'])) {
                     case 'index.php':
-                        $page = new Home([$child]);
+                        $page = new PageHome([$child]);
                         break;
                     case 'login.php':
-                        $page = new Login([]);
+                        $page = new PageLogin([]);
                         break;
                     case 'registration.php':
-                        $page = new Registration([]);
+                        $page = new PageRegistration([]);
                         break;
                     default:
-                        $page = new NonExistent([$child]);
+                        $page = new PageNotFound([$child]);
                         break;
                 }
                 Component::mount([$page]);

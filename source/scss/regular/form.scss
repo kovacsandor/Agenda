@@ -43,6 +43,11 @@ input[type="radio"] {
   margin-left: $SIZE / 2;
 }
 
+input[type="file"] {
+  cursor: pointer;
+  display: block;
+}
+
 textarea {
   resize: vertical;
 }
