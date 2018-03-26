@@ -5,27 +5,6 @@ class PageLogin extends Component
     public function __construct($children)
     {
         parent::__construct($children);
-
-//        $file = fopen(DATA_USERS, 'r');
-//        if ($file) {
-//            while (($line = fgets($file)) !== false) {
-//                foreach (unserialize($line) as $key => $value) {
-//                    if (is_array($value)) {
-//                        foreach ($value as $k => $v) {
-//                            echo $key . ' ' . $k . ': ' . $v;
-//                            echo '<br>';
-//                        }
-//                    } else {
-//                        echo $key . ': ' . $value;
-//                        echo '<br>';
-//                    }
-//                }
-//            }
-//            if (!feof($file)) {
-//                echo 'Error: unexpected fgets() fail\n';
-//            }
-//            fclose($file);
-//        }
     }
 
     protected function render()

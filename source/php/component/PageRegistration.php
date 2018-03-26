@@ -64,14 +64,18 @@ class PageRegistration extends Component
                         <option value="university">University</option>
                     </select>
                 </label>
-<!--                <label>-->
-<!--                    Role-->
-<!--                    <select name="role">-->
-<!--                        <option value="user">User</option>-->
-<!--                        <option value="revisor">Revisor</option>-->
-<!--                        <option value="admin">Admin</option>-->
-<!--                    </select>-->
-<!--                </label>-->
+                <label>
+                    Role
+                    <select name="role">
+                        <?php
+                        foreach (Model::getRoles() as $item) {
+                            ?>
+                            <option value="<?= $item->getValue() ?>"><?= $item->getLabel() ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </label>
                 <fieldset>
                     <legend>
                         Gender

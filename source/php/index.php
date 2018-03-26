@@ -20,6 +20,7 @@ spl_autoload_register(function ($class_name) {
         case 'UnorderedList':
             $directory = 'php/component';
             break;
+        case 'LabelValue':
         case 'MenuItem':
         case 'Model':
         case 'Renderable':

@@ -10,4 +10,13 @@ class Model
             new MenuItem('Registration', 'registration.php', true, basename($_SERVER['PHP_SELF']) == 'registration.php'),
         );
     }
+
+    public static function getRoles()
+    {
+        return array(
+            new LabelValue('User', 'user'),
+            new LabelValue('Revisor', 'revisor'),
+            new LabelValue('Admin', 'admin'),
+        );
+    }
 }

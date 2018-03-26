@@ -5,22 +5,21 @@ class Registration extends Request
     public function __construct()
     {
         parent::__construct();
-        $user = serialize($_POST) . PHP_EOL;
-        $_POST = array();
+        $this->dataAdd(DATA_USERS, 'user-');
+    }
 
-        if (is_writable(DATA_USERS)) {
-            if (!$file = fopen(DATA_USERS, 'a')) {
-                echo 'Cannot open file ' . DATA_USERS;
-                exit;
+    private function userGet()
+    {
+        foreach ($this->dataGet(DATA_USERS) as $key => $value) {
+            if (is_array($value)) {
+                foreach ($value as $k => $v) {
+                    echo $key . ' ' . $k . ': ' . $v;
+                    echo '<br>';
+                }
+            } else {
+                echo $key . ': ' . $value;
+                echo '<br>';
             }
-            if (fwrite($file, $user) === FALSE) {
-                echo 'Cannot write to file ' . DATA_USERS;
-                exit;
-            }
-            echo 'Success, wrote to file ' . DATA_USERS;
-            fclose($file);
-        } else {
-            echo 'The file ' . DATA_USERS . ' is not writable';
         }
     }
 }
