@@ -2,20 +2,17 @@
   "name": "Agenda",
   "version": "0.0.1",
   "scripts": {
-    "build": "rm -r production & npm run compile-css && npm run copy-all",
+    "build": "node build.js && npm run compile-css",
     "css-beautify": "cd production/bt9fs3/css && node-sass --indent-type tab --indent-width 1 --output-style expanded style.css style.css",
-    "copy-all": "npm run php && npm run project && npm run root && npm run svg && npm run data",
     "compile-css": "npm run run-sass && npm run css-beautify",
-    "data": "cp -r source/data production/bt9fs3",
-    "php": "cp -r source/php production/bt9fs3 && cd production/bt9fs3 && mv php/page/* ./ && rm -r php/page",
-    "project": "cp -r source/project/* production",
-    "root": "cp -r source/.htaccess production/bt9fs3 && cd production/bt9fs3 && mv php/index.php ./index.php",
-    "run-sass": "node-sass --output-style compressed source/scss/index.scss production/bt9fs3/css/style.css",
-    "svg": "cp -r source/svg production/bt9fs3"
+    "run-sass": "node-sass --output-style compressed source/scss/index.scss production/bt9fs3/css/style.css"
   },
   "dependencies": {
-    "node-sass": "^4.7.2",
-    "normalize.css": "^8.0.0",
-    "npm": "^5.7.1"
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^5.0.0",
+    "node-sass": "^4.8.3",
+    "npm": "^5.8.0"
   }
 }
