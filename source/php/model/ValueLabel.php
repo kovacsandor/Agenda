@@ -1,23 +1,17 @@
 <?php
 
-class LabelValue
+class ValueLabel extends Value
 {
     private $label;
-    private $value;
 
     public function __construct($label, $value)
     {
+        parent::__construct($value);
         $this->label = $label;
-        $this->value = $value;
     }
 
     public function getLabel()
     {
         return $this->label;
-    }
-
-    public function getValue()
-    {
-        return $this->value;
     }
 }

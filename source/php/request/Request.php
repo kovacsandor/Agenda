@@ -4,28 +4,28 @@ abstract class Request
 {
     protected function __construct()
     {
-        //
+
     }
 
     protected function dataAdd($filename, $prefix)
     {
         $_POST['id'] = uniqid($prefix);
         $line = serialize($_POST) . PHP_EOL;
-        $_POST = array();
+        $_POST = [];
 
         if (is_writable($filename)) {
             if (!$file = fopen($filename, 'a')) {
-                echo 'Cannot open file ' . $filename;
+                Model::setMessages(new ValueType('--error', 'Cannot open file ' . $filename));
                 exit;
             }
             if (fwrite($file, $line) === FALSE) {
-                echo 'Cannot write to file ' . $filename;
+                Model::setMessages(new ValueType('--error', 'Cannot write to file ' . $filename));
                 exit;
             }
-            echo 'Success, wrote to file ' . $filename;
+            Model::setMessages(new ValueType('--success', 'Success, wrote to file ' . $filename));
             fclose($file);
         } else {
-            echo 'The file ' . $filename . ' is not writable';
+            Model::setMessages(new ValueType('--error', 'The file ' . $filename . ' is not writable'));
         }
     }
 
@@ -38,7 +38,7 @@ abstract class Request
                 array_push($result, unserialize($line));
             }
             if (!feof($file)) {
-                echo 'Error: unexpected fgets() fail\n';
+                Model::setMessages(new ValueType('--error', 'Error: unexpected fgets() fail\n'));
             }
             fclose($file);
         }

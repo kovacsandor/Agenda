@@ -2,21 +2,33 @@
 
 class Model
 {
+    private static $messages = [];
+
     public static function getMenu()
     {
-        return array(
-            new MenuItem('Home', BASE_URL, basename($_SERVER['PHP_SELF']) == 'index.php', true),
-            new MenuItem('Login', 'login.php', basename($_SERVER['PHP_SELF']) == 'login.php', true),
-            new MenuItem('Registration', 'registration.php', true, basename($_SERVER['PHP_SELF']) == 'registration.php'),
-        );
+        return [
+            new MenuItem('Home', basename($_SERVER['PHP_SELF']) == 'index.php', true, BASE_URL),
+            new MenuItem('Login', basename($_SERVER['PHP_SELF']) == 'login.php', true, 'login.php'),
+            new MenuItem('Registration', true, basename($_SERVER['PHP_SELF']) == 'registration.php', 'registration.php'),
+        ];
     }
 
     public static function getRoles()
     {
-        return array(
-            new LabelValue('User', 'user'),
-            new LabelValue('Revisor', 'revisor'),
-            new LabelValue('Admin', 'admin'),
-        );
+        return [
+            new ValueLabel('User', 'user'),
+            new ValueLabel('Revisor', 'revisor'),
+            new ValueLabel('Admin', 'admin'),
+        ];
+    }
+
+    public static function getMessages()
+    {
+        return Model::$messages;
+    }
+
+    public static function setMessages($message)
+    {
+        Model::$messages[] = $message;
     }
 }

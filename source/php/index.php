@@ -12,6 +12,7 @@ spl_autoload_register(function ($class_name) {
         case 'Logo':
         case 'Main':
         case 'Menu':
+        case 'Message':
         case 'PageHome':
         case 'PageLogin':
         case 'PageNotFound':
@@ -20,10 +21,12 @@ spl_autoload_register(function ($class_name) {
         case 'UnorderedList':
             $directory = 'php/component';
             break;
-        case 'LabelValue':
         case 'MenuItem':
         case 'Model':
         case 'Renderable':
+        case 'Value':
+        case 'ValueLabel':
+        case 'ValueType':
             $directory = 'php/model';
             break;
         case 'Registration':

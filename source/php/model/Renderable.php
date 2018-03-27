@@ -1,11 +1,12 @@
 <?php
 
-abstract class Renderable
+class Renderable extends ValueLabel
 {
-    protected $isVisible;
+    private $isVisible;
 
-    protected function __construct($isVisible)
+    public function __construct($label, $isVisible, $value)
     {
+        parent::__construct($label, $value);
         $this->isVisible = $isVisible;
     }
 

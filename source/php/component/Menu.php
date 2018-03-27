@@ -27,7 +27,7 @@ class Menu extends Container
                     <li class="<?= P ?>-menu-item <?= P ?>--mobile">
                         <a href="#<?= ID_NAV ?>"
                            class="<?= P ?>-button <?= P ?>--menu">
-                            <?= Component::mount(new Icon(['logo' => ICON_MENU], [])) ?>
+                            <?= Component::mount(new Icon(['icon' => ICON_MENU], [])) ?>
                         </a>
                     </li>
                     <?php
@@ -36,7 +36,7 @@ class Menu extends Container
                     if ($item->isVisible()) {
                         ?>
                         <li class="<?= $this->properties['isMain'] ? P . '-menu-item' : '' ?>">
-                            <a href="<?= $item->getLink() ?>"
+                            <a href="<?= $item->getValue() ?>"
                                class="<?= P ?>-button <?= $this->properties['isMain'] ? P . '--menu' :
                                    P . '--list ' . P . '--teal' ?>
                                 <?= $item->isActive() ? ' ' . P . '--active' : '' ?>">

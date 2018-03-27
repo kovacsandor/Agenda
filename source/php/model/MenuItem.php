@@ -3,29 +3,15 @@
 class MenuItem extends Renderable
 {
     private $isActive;
-    private $label;
-    private $link;
 
-    public function __construct($label, $link, $isActive, $isVisible)
+    public function __construct($label, $isActive, $isVisible, $value)
     {
-        parent::__construct($isVisible);
+        parent::__construct($label, $isVisible, $value);
         $this->isActive = $isActive;
-        $this->label = $label;
-        $this->link = $link;
     }
 
     public function isActive()
     {
         return $this->isActive;
-    }
-
-    public function getLabel()
-    {
-        return $this->label;
-    }
-
-    public function getLink()
-    {
-        return $this->link;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Icon extends Container
+class Message extends Container
 {
     public function __construct($properties, $children)
     {
@@ -9,9 +9,9 @@ class Icon extends Container
 
     protected function render()
     { ?>
-        <div class="<?= P ?>-icon-container">
+        <div class="<?= P ?>-message <?= P . $this->properties['type'] ?>">
             <?php
-            Component::mount(new Trust(file_get_contents($this->properties['icon'])));
+            echo $this->properties['value'];
             Component::mount($this->children);
             ?>
         </div>
