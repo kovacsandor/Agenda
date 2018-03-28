@@ -19,6 +19,7 @@ class PageRegistration extends Component
                     </span>
                     <input name="name"
                            type="text"
+                           value="<?= $this->get('name') ?>"
                            required>
                 </label>
                 <label>
@@ -43,12 +44,13 @@ class PageRegistration extends Component
                     </span>
                     <input name="email"
                            type="email"
+                           value="<?= $this->get('email') ?>"
                            required>
                 </label>
                 <label>
                     About
                     <textarea name="about"
-                              rows="3"></textarea>
+                              rows="3"><?= $this->get('about') ?></textarea>
                 </label>
                 <label>
                     Profile picture
@@ -143,5 +145,10 @@ class PageRegistration extends Component
             ?>
         </section>
         <?php ;
+    }
+
+    private function get($key)
+    {
+        return isset($_POST[$key]) ? $_POST[$key] : '';
     }
 }

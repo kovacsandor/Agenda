@@ -33,6 +33,9 @@ spl_autoload_register(function ($class_name) {
         case 'Request':
             $directory = 'php/request';
             break;
+        case 'Callback':
+            $directory = 'php/utility';
+            break;
         default:
             throw new Exception('Unregistered class: ' . $class_name);
     }
