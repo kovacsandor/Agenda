@@ -12,4 +12,8 @@ main {
     @extend %box-shadow;
     background: white;
   }
+
+  & ~ & {
+    margin-top: $SIZE * 2;
+  }
 }

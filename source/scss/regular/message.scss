@@ -2,10 +2,11 @@
 
 .#{$P}-message-container {
   background: $C_GREY_1;
-  padding-top: $SIZE * 2;
+  padding-bottom: $SIZE * 2;
 }
 
 .#{$P}-message {
+  @extend %box-shadow;
   border-style: solid;
   border-width: 1px;
   padding: $SIZE / 2 - 1 $SIZE;

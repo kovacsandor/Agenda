@@ -12,6 +12,20 @@ class Main extends Component
         <main>
             <div class="<?= P ?>-container">
                 <?php
+                if (Model::getMessages()) {
+                    ?>
+                    <div class="<?= P ?>-message-container">
+                        <?php
+                        foreach (Model::getMessages() as $item) {
+                            Component::mount(new Message([
+                                'type' => $item->getType(),
+                                'value' => $item->getValue(),
+                            ], []));
+                        }
+                        ?>
+                    </div>
+                    <?php
+                }
                 $child = new UnorderedList([
                     new ListItem('Item:1'),
                     new ListItem(new Trust('<span>Item:2</span>')),

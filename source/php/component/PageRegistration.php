@@ -14,7 +14,7 @@ class PageRegistration extends Component
             <form action="<?= $_SERVER['PHP_SELF'] ?>"
                   method="post">
                 <label>
-                    <span class="<?= P ?>-required">
+                    <span class="<?= P ?>-">
                         Name
                     </span>
                     <input name="name"
@@ -23,7 +23,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-required">
+                    <span class="<?= P ?>-">
                         Password
                     </span>
                     <input name="password"
@@ -31,7 +31,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-required">
+                    <span class="<?= P ?>-">
                         Password again
                     </span>
                     <input name="password-again"
@@ -39,7 +39,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-required">
+                    <span class="<?= P ?>-">
                         Email
                     </span>
                     <input name="email"
@@ -60,6 +60,7 @@ class PageRegistration extends Component
                 <label>
                     Education
                     <select name="education">
+                        <option value="">Please choose...</option>
                         <option value="elementary">Elementary</option>
                         <option value="high-school">High school</option>
                         <option value="college">College</option>
@@ -125,7 +126,7 @@ class PageRegistration extends Component
                     </label>
                 </fieldset>
                 <label>
-                    <span class="<?= P ?>-required">
+                    <span class="<?= P ?>-">
                         Confirm reading terms and conditions
                     </span>
                     <input name="terms"
