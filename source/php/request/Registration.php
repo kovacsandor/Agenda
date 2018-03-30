@@ -23,18 +23,18 @@ class Registration extends Request
             $canBeAdded = false;
             Model::setMessages(new ValueType('--error', 'Field \'Password\' is required.'));
         }
-//        if ($_POST['password-again'] == '') {
-//            $canBeAdded = false;
-//            Model::setMessages(new ValueType('--error', 'Field \'Password again\' is required.'));
-//        }
+        if ($_POST['password-again'] == '') {
+            $canBeAdded = false;
+            Model::setMessages(new ValueType('--error', 'Field \'Password again\' is required.'));
+        }
         if ($_POST['email'] == '') {
             $canBeAdded = false;
             Model::setMessages(new ValueType('--error', 'Field \'Email\' is required.'));
         }
-//        if (!isset($_POST['terms'])) {
-//            $canBeAdded = false;
-//            Model::setMessages(new ValueType('--error', 'You must confirm reading terms and conditions.'));
-//        }
+        if (!isset($_POST['terms'])) {
+            $canBeAdded = false;
+            Model::setMessages(new ValueType('--error', 'You must confirm reading terms and conditions.'));
+        }
         if (sizeof($name) > 0) {
             $canBeAdded = false;
             Model::setMessages(new ValueType('--error', 'Name \'' . $_POST['name'] . '\' is already taken.'));
@@ -43,10 +43,10 @@ class Registration extends Request
             $canBeAdded = false;
             Model::setMessages(new ValueType('--error', 'Email \'' . $_POST['email'] . '\' is already taken.'));
         }
-//        if ($_POST['password'] != $_POST['password-again']) {
-//            $canBeAdded = false;
-//            Model::setMessages(new ValueType('--error', 'Passwords don\'t match.'));
-//        }
+        if ($_POST['password'] != $_POST['password-again']) {
+            $canBeAdded = false;
+            Model::setMessages(new ValueType('--error', 'Passwords don\'t match.'));
+        }
         if ($canBeAdded) {
             $this->dataAdd(DATA_USERS, 'user-');
         }

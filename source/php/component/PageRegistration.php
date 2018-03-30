@@ -14,7 +14,7 @@ class PageRegistration extends Component
             <form action="<?= $_SERVER['PHP_SELF'] ?>"
                   method="post">
                 <label>
-                    <span class="<?= P ?>-">
+                    <span class="<?= P ?>-required">
                         Name
                     </span>
                     <input name="name"
@@ -23,7 +23,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-">
+                    <span class="<?= P ?>-required">
                         Password
                     </span>
                     <input name="password"
@@ -31,7 +31,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-">
+                    <span class="<?= P ?>-required">
                         Password again
                     </span>
                     <input name="password-again"
@@ -39,7 +39,7 @@ class PageRegistration extends Component
                            required>
                 </label>
                 <label>
-                    <span class="<?= P ?>-">
+                    <span class="<?= P ?>-required">
                         Email
                     </span>
                     <input name="email"
@@ -126,7 +126,7 @@ class PageRegistration extends Component
                     </label>
                 </fieldset>
                 <label>
-                    <span class="<?= P ?>-">
+                    <span class="<?= P ?>-required">
                         Confirm reading terms and conditions
                     </span>
                     <input name="terms"

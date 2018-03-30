@@ -1,16 +1,12 @@
 /*! Message */
 
 .#{$P}-message-container {
-  background: $C_GREY_1;
   padding-bottom: $SIZE * 2;
 }
 
 .#{$P}-message {
   @extend %box-shadow;
-  border-style: solid;
-  border-width: 1px;
-  padding: $SIZE / 2 - 1 $SIZE;
-  pointer-events: none;
+  padding: $SIZE / 2 $SIZE;
 
   & ~ & {
     margin-top: $SIZE / 2;
@@ -18,31 +14,26 @@
 
   &.#{$P}--error {
     background: $C_RED_3;
-    border-color: $C_RED_4;
-    color: $C_RED_7;
+    color: $C_RED_6;
   }
 
   &.#{$P}--info {
-    background: $C_BLUE_1;
-    border-color: $C_BLUE_3;
+    background: $C_BLUE_3;
     color: $C_BLUE_6;
   }
 
   &.#{$P}--neutral {
     background: white;
-    border-color: $C_GREY_2;
     color: $C_GREY_6;
   }
 
   &.#{$P}--success {
     background: $C_GREEN_3;
-    border-color: $C_GREEN_4;
     color: $C_GREEN_7;
   }
 
   &.#{$P}--warning {
-    background: $C_YELLOW_2;
-    border-color: $C_YELLOW_4;
-    color: $C_YELLOW_7;
+    background: $C_BUMBLEBEE_3;
+    color: $C_BUMBLEBEE_7;
   }
 }
