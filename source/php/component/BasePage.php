@@ -2,9 +2,6 @@
 
 class BasePage extends Component
 {
-    private $url_css = BASE_URL . '/css/style.css';
-    private $document_title = 'GET DOCUMENT TITLE';
-
     public function __construct($children)
     {
         parent::__construct($children);
@@ -17,8 +14,8 @@ class BasePage extends Component
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="stylesheet" href="<?php echo $this->url_css ?>">
-            <title><?php echo $this->document_title ?></title>
+            <link rel="stylesheet" href="<?php echo URL_STYLESHEET ?>">
+            <title><?php echo $this->getDocumentTitle() ?></title>
         </head>
         <body>
         <?php
@@ -34,5 +31,30 @@ class BasePage extends Component
         </body>
         </html>
         <?php ;
+    }
+
+    public function getDocumentTitle()
+    {
+        $basename = basename($_SERVER['PHP_SELF']);
+        switch ($basename) {
+            case PAGE_404:
+                $result = LABEL_PAGE_404;
+                break;
+            case PAGE_HOME:
+                $result = LABEL_PAGE_HOME;
+                break;
+            case PAGE_LOGIN:
+                $result = LABEL_PAGE_LOGIN;
+                break;
+            case PAGE_REGISTRATION:
+                $result = LABEL_PAGE_REGISTRATION;
+                break;
+            case PAGE_LOG_OUT:
+                $result = '';
+                break;
+            default:
+                throw new Exception('Unregistered page: ' . $basename);
+        }
+        return $result;
     }
 }

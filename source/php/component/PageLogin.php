@@ -10,13 +10,14 @@ class PageLogin extends Component
     protected function render()
     { ?>
         <section class="<?= P ?>-section <?= P ?>--white">
-            <h1>Login</h1>
-            <form>
+            <h1><?= LABEL_PAGE_LOGIN ?></h1>
+            <form action="<?= $_SERVER['PHP_SELF'] ?>"
+                  method="post">
                 <label>
                     <span class="<?= P ?>-required">
                         Name
                     </span>
-                    <input name="name"
+                    <input name="<?= KEY_USER_NAME ?>"
                            type="text"
                            required>
                 </label>
@@ -24,7 +25,7 @@ class PageLogin extends Component
                     <span class="<?= P ?>-required">
                         Password
                     </span>
-                    <input name="password"
+                    <input name="<?= KEY_USER_PASSWORD ?>"
                            type="password"
                            required>
                 </label>
@@ -33,9 +34,9 @@ class PageLogin extends Component
                             type="submit">
                         Submit
                     </button>
-                    <a href="registration.php"
+                    <a href="<?= PAGE_REGISTRATION ?>"
                        class="<?= P ?>-button <?= P ?>--teal">
-                        Registration
+                        <?= LABEL_PAGE_REGISTRATION ?>
                     </a>
                 </div>
             </form>

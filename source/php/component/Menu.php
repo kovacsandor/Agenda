@@ -9,20 +9,20 @@ class Menu extends Container
 
     protected function render()
     { ?>
-        <nav class="<?= $this->properties['isMain'] ? P . '-menu-main' : '' ?>">
+        <nav class="<?= $this->properties[PROPERTY_IS_MAIN] ? P . '-menu-main' : '' ?>">
             <?php
-            if ($this->properties['isMain']) {
+            if ($this->properties[PROPERTY_IS_MAIN]) {
                 ?>
-                <a href="<?= BASE_URL ?>"
+                <a href="<?= URL_BASE ?>"
                    class="<?= P ?>-button <?= P ?>--menu">
                     <?= Component::mount(new Logo([])) ?>
                 </a>
                 <?php
             }
             ?>
-            <ul class="<?= $this->properties['isMain'] ? P . '-menu-list' : '' ?>">
+            <ul class="<?= $this->properties[PROPERTY_IS_MAIN] ? P . '-menu-list' : '' ?>">
                 <?php
-                if ($this->properties['isMain']) {
+                if ($this->properties[PROPERTY_IS_MAIN]) {
                     ?>
                     <li class="<?= P ?>-menu-item <?= P ?>--mobile">
                         <a href="#<?= ID_NAV ?>"
@@ -35,9 +35,9 @@ class Menu extends Container
                 foreach (Model::getMenu() as $item) {
                     if ($item->isVisible()) {
                         ?>
-                        <li class="<?= $this->properties['isMain'] ? P . '-menu-item' : '' ?>">
+                        <li class="<?= $this->properties[PROPERTY_IS_MAIN] ? P . '-menu-item' : '' ?>">
                             <a href="<?= $item->getValue() ?>"
-                               class="<?= P ?>-button <?= $this->properties['isMain'] ? P . '--menu' :
+                               class="<?= P ?>-button <?= $this->properties[PROPERTY_IS_MAIN] ? P . '--menu' :
                                    P . '--list ' . P . '--teal' ?>
                                 <?= $item->isActive() ? ' ' . P . '--active' : '' ?>">
                                 <?= $item->getLabel() ?>

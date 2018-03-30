@@ -10,7 +10,7 @@ class PageNotFound extends Component
     protected function render()
     { ?>
         <section class="<?= P ?>-section <?= P ?>--white">
-            <h1>Page not found</h1>
+            <h1><?= LABEL_PAGE_404 ?></h1>
             <?php
             Component::mount($this->children);
             ?>

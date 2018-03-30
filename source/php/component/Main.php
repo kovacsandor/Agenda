@@ -18,31 +18,26 @@ class Main extends Component
                         <?php
                         foreach (Model::getMessages() as $item) {
                             Component::mount(new Message([
-                                'type' => $item->getType(),
-                                'value' => $item->getValue(),
+                                PROPERTY_TYPE => $item->getType(),
+                                PROPERTY_VALUE => $item->getValue(),
                             ], []));
                         }
                         ?>
                     </div>
                     <?php
                 }
-                $child = new UnorderedList([
-                    new ListItem('Item:1'),
-                    new ListItem(new Trust('<span>Item:2</span>')),
-                    new ListItem('Item:3'),
-                ]);
                 switch (basename($_SERVER['PHP_SELF'])) {
-                    case 'index.php':
-                        $page = new PageHome([$child]);
+                    case PAGE_HOME:
+                        $page = new PageHome([]);
                         break;
-                    case 'login.php':
+                    case PAGE_LOGIN:
                         $page = new PageLogin([]);
                         break;
-                    case 'registration.php':
+                    case PAGE_REGISTRATION:
                         $page = new PageRegistration([]);
                         break;
                     default:
-                        $page = new PageNotFound([$child]);
+                        $page = new PageNotFound([]);
                         break;
                 }
                 Component::mount([$page]);

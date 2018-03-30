@@ -11,7 +11,7 @@ class Icon extends Container
     { ?>
         <div class="<?= P ?>-icon-container">
             <?php
-            Component::mount(new Trust(file_get_contents($this->properties['icon'])));
+            Component::mount(new Trust(file_get_contents($this->properties[PROPERTY_ICON])));
             Component::mount($this->children);
             ?>
         </div>

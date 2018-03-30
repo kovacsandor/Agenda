@@ -10,23 +10,23 @@ class PageRegistration extends Component
     protected function render()
     { ?>
         <section class="<?= P ?>-section <?= P ?>--white">
-            <h1>Registration</h1>
+            <h1><?= LABEL_PAGE_REGISTRATION ?></h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>"
                   method="post">
                 <label>
                     <span class="<?= P ?>-required">
                         Name
                     </span>
-                    <input name="name"
+                    <input name="<?= KEY_USER_NAME ?>"
                            type="text"
-                           value="<?= $this->get('name') ?>"
+                           value="<?= $this->get(KEY_USER_NAME) ?>"
                            required>
                 </label>
                 <label>
                     <span class="<?= P ?>-required">
                         Password
                     </span>
-                    <input name="password"
+                    <input name="<?= KEY_USER_PASSWORD ?>"
                            type="password"
                            required>
                 </label>
@@ -34,7 +34,7 @@ class PageRegistration extends Component
                     <span class="<?= P ?>-required">
                         Password again
                     </span>
-                    <input name="password-again"
+                    <input name="<?= KEY_USER_PASSWORD_AGAIN ?>"
                            type="password"
                            required>
                 </label>
@@ -42,9 +42,9 @@ class PageRegistration extends Component
                     <span class="<?= P ?>-required">
                         Email
                     </span>
-                    <input name="email"
+                    <input name="<?= KEY_USER_EMAIL ?>"
                            type="email"
-                           value="<?= $this->get('email') ?>"
+                           value="<?= $this->get(KEY_USER_EMAIL) ?>"
                            required>
                 </label>
                 <label>
@@ -67,18 +67,24 @@ class PageRegistration extends Component
                         <option value="university">University</option>
                     </select>
                 </label>
-                <label>
-                    Role
-                    <select name="role">
-                        <?php
-                        foreach (Model::getRoles() as $item) {
-                            ?>
-                            <option value="<?= $item->getValue() ?>"><?= $item->getLabel() ?></option>
+                <?php
+                if (Helper::isUserAdmin()) {
+                    ?>
+                    <label>
+                        Role
+                        <select name="<?= KEY_USER_ROLE ?>">
                             <?php
-                        }
-                        ?>
-                    </select>
-                </label>
+                            foreach (Model::getRoles() as $item) {
+                                ?>
+                                <option value="<?= $item->getValue() ?>"><?= $item->getLabel() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </label>
+                    <?php
+                }
+                ?>
                 <fieldset>
                     <legend>
                         Gender
@@ -129,9 +135,9 @@ class PageRegistration extends Component
                     <span class="<?= P ?>-required">
                         Confirm reading terms and conditions
                     </span>
-                    <input name="terms"
+                    <input name="<?= KEY_USER_TERMS ?>"
                            type="checkbox"
-                           value="confirmed"
+                           value="<?= VALUE_CHECKBOX_TRUE ?>"
                            required>
                 </label>
                 <div class="<?= P ?>-button-container">

@@ -7,7 +7,29 @@ abstract class Request
 
     }
 
-    protected function dataAdd($filename, $prefix)
+    public static function handle()
+    {
+        $basename = basename($_SERVER['PHP_SELF']);
+        if ($basename == PAGE_LOG_OUT) {
+            new LogOut();
+        }
+        if (sizeof($_POST) > 0) {
+            switch ($basename) {
+                case PAGE_LOGIN:
+                    new Login();
+                    break;
+                case PAGE_REGISTRATION:
+                    new Registration();
+                    break;
+                default:
+                    throw new Exception('Unregistered page: ' . $basename);
+            }
+        }
+    }
+
+    protected abstract function action();
+
+    protected function dataAdd($filename, $prefix, $message)
     {
         $_POST['id'] = uniqid($prefix);
         $line = serialize($_POST) . PHP_EOL;
@@ -15,17 +37,18 @@ abstract class Request
 
         if (is_writable($filename)) {
             if (!$file = fopen($filename, 'a')) {
-                Model::setMessages(new ValueType('--error', 'Cannot open file ' . $filename));
+                Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'Cannot open file ' . $filename));
                 exit;
             }
             if (fwrite($file, $line) === FALSE) {
-                Model::setMessages(new ValueType('--error', 'Cannot write to file ' . $filename));
+                Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'Cannot write to file ' . $filename));
                 exit;
             }
-            Model::setMessages(new ValueType('--success', 'Success, wrote to file ' . $filename));
+            $msg = isset($message) ? $message : 'Success, wrote to file ' . $filename;
+            Model::setMessages(new ValueType(TYPE_MESSAGE_SUCCESS, $msg));
             fclose($file);
         } else {
-            Model::setMessages(new ValueType('--error', 'The file ' . $filename . ' is not writable'));
+            Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'The file ' . $filename . ' is not writable'));
         }
     }
 
@@ -38,7 +61,7 @@ abstract class Request
                 array_push($result, unserialize($line));
             }
             if (!feof($file)) {
-                Model::setMessages(new ValueType('--error', 'Error: unexpected fgets() fail\n'));
+                Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'Error: unexpected fgets() fail\n'));
             }
             fclose($file);
         }

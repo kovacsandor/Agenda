@@ -11,7 +11,7 @@ class Header extends Component
     { ?>
         <header>
             <?php
-            Component::mount(new Menu(['isMain' => true], []));
+            Component::mount(new Menu([PROPERTY_IS_MAIN => true], []));
             Component::mount($this->children);
             ?>
         </header>

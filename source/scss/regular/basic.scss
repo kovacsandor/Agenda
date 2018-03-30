@@ -9,7 +9,7 @@
 body {
   background: $C_GREY_4;
   color: $C_GREY_6;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: $FONT_FAMILY;
   margin-top: $SIZE * 4;
 
   @media(min-width: $BREAKPOINT_MD) {
