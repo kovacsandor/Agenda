@@ -15,6 +15,9 @@ abstract class Request
         }
         if (sizeof($_POST) > 0) {
             switch ($basename) {
+                case PAGE_ADD:
+                    new DutyRequest();
+                    break;
                 case PAGE_LOGIN:
                     new Login();
                     break;
@@ -32,6 +35,9 @@ abstract class Request
     protected function dataAdd($filename, $prefix, $message)
     {
         $_POST['id'] = uniqid($prefix);
+        foreach ($_POST as $k => $v) {
+            $_POST[$k] = json_encode($v);
+        }
         $line = serialize($_POST) . PHP_EOL;
         $_POST = [];
 
@@ -50,21 +56,5 @@ abstract class Request
         } else {
             Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'The file ' . $filename . ' is not writable'));
         }
-    }
-
-    protected function dataGet($filename)
-    {
-        $result = [];
-        $file = fopen($filename, 'r');
-        if ($file) {
-            while (($line = fgets($file)) !== false) {
-                array_push($result, unserialize($line));
-            }
-            if (!feof($file)) {
-                Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'Error: unexpected fgets() fail\n'));
-            }
-            fclose($file);
-        }
-        return $result;
     }
 }

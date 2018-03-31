@@ -3,6 +3,7 @@
 //Variables
 @import "variables";
 //Partials
+@import "partial/animation";
 @import "partial/box-shadow";
 @import "partial/button";
 @import "partial/clearfix";
@@ -14,9 +15,12 @@
 @import "regular/basic";
 @import "regular/button";
 @import "regular/content";
+@import "regular/duty";
+@import "regular/floats";
 @import "regular/footer";
 @import "regular/form";
 @import "regular/layout";
 @import "regular/menu";
 @import "regular/message";
+@import "regular/priority";
 @import "regular/svg";

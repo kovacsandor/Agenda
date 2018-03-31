@@ -1,0 +1,28 @@
+/*! Priority */
+
+.#{$P}-priority-container {
+
+  * {
+    fill: $C_GREY_2;
+  }
+
+  &.#{$P}--negligible {
+    @extend %animation-negligible;
+  }
+
+  &.#{$P}--moderate * {
+    @extend %animation-moderate;
+  }
+
+  &.#{$P}--important * {
+    @extend %animation-important;
+  }
+
+  &.#{$P}--urgent * {
+    @extend %animation-urgent;
+  }
+
+  &.#{$P}--critical * {
+    @extend %animation-critical;
+  }
+}

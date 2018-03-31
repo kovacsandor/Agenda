@@ -31,6 +31,39 @@
   }
 }
 
+%button-green {
+  background: $C_GREEN_5;
+  border-color: $C_GREEN_5;
+  color: $C_GREEN_2;
+  fill: $C_GREEN_2;
+
+  &:hover {
+    background: $C_GREEN_4;
+    border-color: $C_GREEN_4;
+    color: $C_GREEN_1;
+    fill: $C_GREEN_1;
+  }
+
+  &:visited {
+    color: $C_GREEN_2;
+    fill: $C_GREEN_2;
+  }
+
+  &.#{$P}--active {
+    background: $C_GREEN_6;
+    border-color: $C_GREEN_6;
+    color: $C_GREEN_3;
+    fill: $C_GREEN_3;
+
+    &:hover {
+      background: $C_GREEN_7;
+      border-color: $C_GREEN_7;
+      color: $C_GREEN_4;
+      fill: $C_GREEN_4;
+    }
+  }
+}
+
 %button-grey {
   background: $C_GREY_2;
   border-color: $C_GREY_2;
@@ -55,6 +88,39 @@
       background: $C_GREY_4;
       border-color: $C_GREY_4;
       color: $C_GREY_7;
+    }
+  }
+}
+
+%button-red {
+  background: $C_RED_4;
+  border-color: $C_RED_4;
+  color: $C_RED_1;
+  fill: $C_RED_1;
+
+  &:hover {
+    background: $C_RED_3;
+    border-color: $C_RED_3;
+    color: white;
+    fill: white;
+  }
+
+  &:visited {
+    color: $C_RED_1;
+    fill: $C_RED_1;
+  }
+
+  &.#{$P}--active {
+    background: $C_RED_5;
+    border-color: $C_RED_5;
+    color: $C_RED_2;
+    fill: $C_RED_2;
+
+    &:hover {
+      background: $C_RED_6;
+      border-color: $C_RED_6;
+      color: $C_RED_3;
+      fill: $C_RED_3;
     }
   }
 }

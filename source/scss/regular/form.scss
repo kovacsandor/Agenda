@@ -6,7 +6,7 @@ legend {
 }
 
 fieldset {
-  border: solid 1px $C_GREY_2;
+  border: $BORDER;
   margin: 0 0 $SIZE;
   padding: $SIZE / 2 - 1 $SIZE;
 
@@ -30,7 +30,7 @@ input[type="text"],
 select,
 textarea {
   @extend %typography-regular;
-  border: solid 1px $C_GREY_2;
+  border: $BORDER;
   color: $C_GREY_6;;
   display: block;
   padding: $SIZE / 2 - 1 $SIZE;

@@ -13,20 +13,24 @@ class Main extends Component
             <div class="<?= P ?>-container">
                 <?php
                 if (Model::getMessages()) {
-                    ?>
-                    <div class="<?= P ?>-message-container">
-                        <?php
-                        foreach (Model::getMessages() as $item) {
-                            Component::mount(new Message([
-                                PROPERTY_TYPE => $item->getType(),
-                                PROPERTY_VALUE => $item->getValue(),
-                            ], []));
-                        }
-                        ?>
-                    </div>
-                    <?php
+                    $messages = [];
+                    foreach (Model::getMessages() as $item) {
+                        $messages[] = [
+                            PROPERTY_TYPE => $item->getType(),
+                            PROPERTY_VALUE => $item->getValue(),
+                        ];
+                    }
+                    Component::mount(new MessageContainer([
+                        PROPERTY_MESSAGES => $messages,
+                    ], []));
                 }
                 switch (basename($_SERVER['PHP_SELF'])) {
+                    case PAGE_ADD:
+                        $page = new PageDuty([]);
+                        break;
+                    case PAGE_DUTIES:
+                        $page = new PageDutyList([]);
+                        break;
                     case PAGE_HOME:
                         $page = new PageHome([]);
                         break;

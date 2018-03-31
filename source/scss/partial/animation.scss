@@ -1,0 +1,114 @@
+%animation-negligible {
+
+  rect:nth-child(2),
+  rect:nth-child(3),
+  rect:nth-child(4),
+  rect:nth-child(5) {
+    fill: $C_GREY_2;
+  }
+
+  rect:nth-child(1) {
+    animation: 1s linear priority-negligible;
+    fill: $C_GREEN_4;
+  }
+}
+
+%animation-moderate {
+
+  @extend %animation-negligible;
+
+  rect:nth-child(2) {
+    animation: 1s linear priority-moderate;
+    fill: $C_GREEN_4;
+  }
+}
+
+%animation-important {
+
+  @extend %animation-moderate;
+
+  rect:nth-child(3) {
+    animation: 1s linear priority-important;
+    fill: $C_GREEN_4;
+  }
+}
+
+%animation-urgent {
+
+  @extend %animation-important;
+
+  rect:nth-child(4) {
+    animation: 1s linear priority-urgent;
+    fill: $C_BUMBLEBEE_5;
+  }
+}
+
+%animation-critical {
+
+  @extend %animation-urgent;
+
+  rect:nth-child(5) {
+    animation: 1s linear priority-critical;
+    fill: $C_RED_4;
+  }
+}
+
+@-webkit-keyframes priority-negligible {
+  0% {
+    fill: $C_GREY_2;
+  }
+  50% {
+    fill: $C_GREY_2;
+  }
+  60% {
+    fill: $C_GREEN_4;
+  }
+}
+
+@-webkit-keyframes priority-moderate {
+  0% {
+    fill: $C_GREY_2;
+  }
+  60% {
+    fill: $C_GREY_2;
+  }
+  70% {
+    fill: $C_GREEN_4;
+  }
+}
+
+@-webkit-keyframes priority-important {
+  0% {
+    fill: $C_GREY_2;
+  }
+  70% {
+    fill: $C_GREY_2;
+  }
+  80% {
+    fill: $C_GREEN_4;
+  }
+}
+
+@-webkit-keyframes priority-urgent {
+  0% {
+    fill: $C_GREY_2;
+  }
+  80% {
+    fill: $C_GREY_2;
+  }
+  90% {
+    fill: $C_BUMBLEBEE_5;
+  }
+}
+
+@-webkit-keyframes priority-critical {
+  0% {
+    fill: $C_GREY_2;
+  }
+  90% {
+    fill: $C_GREY_2;
+  }
+  100% {
+    fill: $C_RED_4;
+  }
+}

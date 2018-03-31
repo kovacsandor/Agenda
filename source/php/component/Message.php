@@ -9,7 +9,7 @@ class Message extends Container
 
     protected function render()
     { ?>
-        <div class="<?= P ?>-message <?= P . $this->properties[PROPERTY_TYPE] ?>">
+        <div class="<?= P ?>-message <?= P . '--' . $this->properties[PROPERTY_TYPE] ?>">
             <?php
             echo $this->properties[PROPERTY_VALUE];
             Component::mount($this->children);

@@ -34,8 +34,16 @@
     @extend %button-blue;
   }
 
+  &.#{$P}--green {
+    @extend %button-green;
+  }
+
   &.#{$P}--grey {
     @extend %button-grey;
+  }
+
+  &.#{$P}--red {
+    @extend %button-red;
   }
 
   &.#{$P}--teal {

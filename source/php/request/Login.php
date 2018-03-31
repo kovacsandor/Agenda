@@ -11,7 +11,7 @@ class Login extends Request
     protected function action()
     {
         $canBeLoggedIn = true;
-        $users = array_filter($this->dataGet(DATA_USERS), [new Callback(KEY_USER_NAME), 'filter']);
+        $users = array_filter(Helper::getData(DATA_USERS), [new Callback(KEY_USER_NAME), 'filter']);
         $user = sizeof($users) > 0 ? array_values($users)[0] : null;
 
         $name = $_POST[KEY_USER_NAME];

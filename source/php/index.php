@@ -8,3 +8,5 @@ new Session();
 Request::handle();
 
 Component::mount(new BasePage([]));
+
+// Favicon

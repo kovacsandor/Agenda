@@ -1,3 +1,3 @@
-a:5:{s:4:"name";s:5:"admin";s:8:"password";s:5:"admin";s:5:"email";s:16:"admin@agenda.com";s:4:"role";s:5:"admin";s:2:"id";s:18:"user-5abbfd98351a8";}
-a:5:{s:4:"name";s:7:"revisor";s:8:"password";s:7:"revisor";s:5:"email";s:18:"revisor@agenda.com";s:4:"role";s:7:"revisor";s:2:"id";s:18:"user-5abbfda6b625e";}
-a:5:{s:4:"name";s:4:"user";s:8:"password";s:4:"user";s:5:"email";s:15:"user@agenda.com";s:4:"role";s:4:"user";s:2:"id";s:18:"user-5abbfdb05dc9f";}
+a:5:{s:4:"name";s:7:""admin"";s:8:"password";s:7:""admin"";s:5:"email";s:18:""admin@agenda.com"";s:4:"role";s:7:""admin"";s:2:"id";s:20:""user-5abeb29c5dd5f"";}
+a:5:{s:4:"name";s:9:""revisor"";s:8:"password";s:9:""revisor"";s:5:"email";s:20:""revisor@agenda.com"";s:4:"role";s:9:""revisor"";s:2:"id";s:20:""user-5abeb2b5028eb"";}
+a:5:{s:4:"name";s:6:""user"";s:8:"password";s:6:""user"";s:5:"email";s:17:""user@agenda.com"";s:4:"role";s:6:""user"";s:2:"id";s:20:""user-5abeb2c66377c"";}

@@ -1,0 +1,32 @@
+/*! Duty */
+
+.#{$P}-duty {
+  border-top: $BORDER;
+  padding: $SIZE 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &.#{$P}--done {
+    opacity: 0.5;
+  }
+}
+
+.#{$P}-duty-title {
+  @extend %typography-h4;
+  margin: 0;
+}
+
+.#{$P}-duty-time {
+  color: $C_GREY_5;
+}
+
+.#{$P}-duty-body {
+  @extend %typography-h6;
+  white-space: pre-line;
+
+  &.#{$P}--done {
+    text-decoration: line-through;
+  }
+}

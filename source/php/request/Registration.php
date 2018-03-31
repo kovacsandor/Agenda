@@ -11,7 +11,7 @@ class Registration extends Request
     protected function action()
     {
         $canBeAdded = true;
-        $users = $this->dataGet(DATA_USERS);
+        $users = Helper::getData(DATA_USERS);
         $names = array_filter($users, [new Callback(KEY_USER_NAME), 'filter']);
         $emails = array_filter($users, [new Callback(KEY_USER_EMAIL), 'filter']);
 
@@ -66,7 +66,7 @@ class Registration extends Request
 //    TODO Delete
     protected function userGet()
     {
-        foreach ($this->dataGet(DATA_USERS) as $keys) {
+        foreach (Helper::getData(DATA_USERS) as $keys) {
             foreach ($keys as $key => $value) {
                 if (is_array($value)) {
                     foreach ($value as $k => $v) {

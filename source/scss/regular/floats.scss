@@ -1,0 +1,17 @@
+/*! Floats */
+
+.#{$P}-floats {
+  @extend %clearfix;
+}
+
+.#{$P}-float-end {
+  float: right;
+}
+
+.#{$P}-float-start {
+  float: left;
+}
+
+.#{$P}-float-center {
+  overflow: hidden;
+}

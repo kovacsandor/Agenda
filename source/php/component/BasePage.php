@@ -40,6 +40,12 @@ class BasePage extends Component
             case PAGE_404:
                 $result = LABEL_PAGE_404;
                 break;
+            case PAGE_ADD:
+                $result = LABEL_PAGE_ADD;
+                break;
+            case PAGE_DUTIES:
+                $result = LABEL_PAGE_DUTIES;
+                break;
             case PAGE_HOME:
                 $result = LABEL_PAGE_HOME;
                 break;

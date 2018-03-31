@@ -19,7 +19,7 @@ class PageRegistration extends Component
                     </span>
                     <input name="<?= KEY_USER_NAME ?>"
                            type="text"
-                           value="<?= $this->get(KEY_USER_NAME) ?>"
+                           value="<?= Helper::getValue(KEY_USER_NAME) ?>"
                            required>
                 </label>
                 <label>
@@ -44,19 +44,28 @@ class PageRegistration extends Component
                     </span>
                     <input name="<?= KEY_USER_EMAIL ?>"
                            type="email"
-                           value="<?= $this->get(KEY_USER_EMAIL) ?>"
+                           value="<?= Helper::getValue(KEY_USER_EMAIL) ?>"
                            required>
                 </label>
                 <label>
                     About
-                    <textarea name="about"
-                              rows="3"><?= $this->get('about') ?></textarea>
+                    <textarea name="<?= KEY_USER_ABOUT ?>"
+                              rows="3"><?= Helper::getValue(KEY_USER_ABOUT) ?></textarea>
                 </label>
                 <label>
                     Profile picture
                     <input name="image"
                            type="file">
                 </label>
+                <?php
+                Component::mount(new MessageContainer([
+                    PROPERTY_IS_MESSAGE_PRIVATE => true,
+                    PROPERTY_MESSAGES => [[
+                        PROPERTY_TYPE => TYPE_MESSAGE_WARNING,
+                        PROPERTY_VALUE => 'Profile picture is not working.',
+                    ]],
+                ], []))
+                ?>
                 <label>
                     Education
                     <select name="education">
@@ -152,10 +161,5 @@ class PageRegistration extends Component
             ?>
         </section>
         <?php ;
-    }
-
-    private function get($key)
-    {
-        return isset($_POST[$key]) ? $_POST[$key] : '';
     }
 }

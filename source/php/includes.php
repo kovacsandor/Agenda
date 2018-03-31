@@ -5,6 +5,7 @@ spl_autoload_register(function ($class_name) {
         case 'BasePage':
         case 'Container':
         case 'Component':
+        case 'Duty':
         case 'Footer':
         case 'Header':
         case 'Icon':
@@ -12,6 +13,9 @@ spl_autoload_register(function ($class_name) {
         case 'Main':
         case 'Menu':
         case 'Message':
+        case 'MessageContainer':
+        case 'PageDuty':
+        case 'PageDutyList':
         case 'PageHome':
         case 'PageLogin':
         case 'PageNotFound':
@@ -27,6 +31,7 @@ spl_autoload_register(function ($class_name) {
         case 'ValueType':
             $directory = 'php/model';
             break;
+        case 'DutyRequest':
         case 'Login':
         case 'LogOut':
         case 'Registration':
