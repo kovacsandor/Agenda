@@ -49,4 +49,9 @@
   &.#{$P}--teal {
     @extend %button-teal;
   }
+
+  &.#{$P}--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

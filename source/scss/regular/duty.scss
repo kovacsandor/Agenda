@@ -1,15 +1,17 @@
 /*! Duty */
 
+.#{$P}-duty-container {
+  border-bottom: $BORDER;
+  border-top: $BORDER;
+  margin-bottom: $SIZE / 2;
+}
+
 .#{$P}-duty {
   border-top: $BORDER;
   padding: $SIZE 0;
 
-  &:last-child {
-    padding-bottom: 0;
-  }
-
-  &.#{$P}--done {
-    opacity: 0.5;
+  &:first-child {
+    border: none
   }
 }
 

@@ -13,6 +13,9 @@ abstract class Request
         if ($basename == PAGE_LOG_OUT) {
             new LogOut();
         }
+        if ($basename == PAGE_DUTIES) {
+            new DutyList();
+        }
         if (sizeof($_POST) > 0) {
             switch ($basename) {
                 case PAGE_ADD:

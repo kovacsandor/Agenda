@@ -20,6 +20,7 @@ spl_autoload_register(function ($class_name) {
         case 'PageLogin':
         case 'PageNotFound':
         case 'PageRegistration':
+        case 'Paging':
         case 'Trust':
             $directory = 'php/component';
             break;
@@ -31,6 +32,7 @@ spl_autoload_register(function ($class_name) {
         case 'ValueType':
             $directory = 'php/model';
             break;
+        case 'DutyList':
         case 'DutyRequest':
         case 'Login':
         case 'LogOut':

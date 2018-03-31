@@ -12,7 +12,8 @@ class PageDutyList extends Component
         <section class="<?= P ?>-section <?= P ?>--white">
             <h1><?= LABEL_PAGE_DUTIES ?></h1>
             <?php
-            $duties = Helper::getData(DATA_DUTIES);
+            Component::mount(new Paging([]));
+            $duties = Model::getDuties();
             if (sizeof($duties) < 1) {
                 Component::mount(new MessageContainer([
                     PROPERTY_IS_MESSAGE_PRIVATE => true,
@@ -23,7 +24,7 @@ class PageDutyList extends Component
                 ], []));
             } else {
                 ?>
-                <div>
+                <div class="<?= P ?>-duty-container">
                     <?php
                     foreach ($duties as $duty) {
                         Component::mount(new Duty([
@@ -37,6 +38,7 @@ class PageDutyList extends Component
                     ?>
                 </div>
                 <?php
+                Component::mount(new Paging([]));
             }
             Component::mount($this->children);
             ?>

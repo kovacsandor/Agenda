@@ -2,7 +2,9 @@
 
 class Model
 {
+    private static $duties = [];
     private static $messages = [];
+    private static $pagingInformation = [];
 
     public static function getMenu()
     {
@@ -28,6 +30,16 @@ class Model
         ];
     }
 
+    public static function getDuties()
+    {
+        return Model::$duties;
+    }
+
+    public static function setDuties($duties)
+    {
+        Model::$duties = $duties;
+    }
+
     public static function getMessages()
     {
         return Model::$messages;
@@ -40,5 +52,15 @@ class Model
         } else {
             Model::$messages[] = $message;
         }
+    }
+
+    public static function getPagingInformation()
+    {
+        return Model::$pagingInformation;
+    }
+
+    public static function setPagingInformation($pagingInformation)
+    {
+        Model::$pagingInformation = $pagingInformation;
     }
 }

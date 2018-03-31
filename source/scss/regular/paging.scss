@@ -1,0 +1,11 @@
+/*! Paging */
+
+.#{$P}-paging-container {
+  margin-right: $SIZE / 2 * -1;
+}
+
+.#{$P}-current-page {
+  color: $C_GREY_5;
+  padding: $SIZE / 2;
+  text-align: center;
+}

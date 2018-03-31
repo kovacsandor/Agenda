@@ -12,7 +12,8 @@ class Duty extends Container
         $body = $this->properties[PROPERTY_DUTY_BODY];
         $isDone = !empty($this->properties[PROPERTY_DUTY_IS_DONE]);
         $priority = $this->properties[PROPERTY_DUTY_PRIORITY];
-        $time = date('j F Y | H:i', $this->properties[PROPERTY_DUTY_TIME]);
+        $datetime = date('c', $this->properties[PROPERTY_DUTY_TIME]);
+        $date = date('j F Y | H:i', $this->properties[PROPERTY_DUTY_TIME]);
         $title = $this->properties[PROPERTY_DUTY_TITLE];
         ?>
         <div class="<?= P ?>-duty">
@@ -30,8 +31,9 @@ class Duty extends Container
                     ">
                         <?= $title ?>
                     </h2>
-                    <time class="<?= P ?>-duty-time">
-                        <?= $time ?>
+                    <time class="<?= P ?>-duty-time"
+                          datetime="<?= $datetime ?>">
+                        <?= $date ?>
                     </time>
                     <p class="<?= P ?>-duty-body <?= $isDone ? P . '--done' : '' ?>"><?= $body ?></p>
                     <div class="<?= P ?>-button-container">
