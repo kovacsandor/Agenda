@@ -1,10 +1,7 @@
-<svg
-        xmlns="http://www.w3.org/2000/svg"
-        baseProfile="full"
-        version="1.1"
-        viewBox="0 0 2048 2048">
-    <path
-            d="m 256,1024 768,-768 192,0 -768,768 768,768 -192,0 z"/>
-    <path
-            d="M 831.99998,1024 1600,256 l 192,0 -768,768 768,768 -192,0 z"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     baseProfile="full"
+     version="1.1"
+     viewBox="0 0 2048 2048">
+    <path d="m 256,1024 768,-768 192,0 -768,768 768,768 -192,0 z"/>
+    <path d="M 831.99998,1024 1600,256 l 192,0 -768,768 768,768 -192,0 z"/>
 </svg>

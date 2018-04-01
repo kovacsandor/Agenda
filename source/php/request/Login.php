@@ -10,6 +10,11 @@ class Login extends Request
 
     protected function action()
     {
+        if (Helper::isUserLoggedIn()) {
+            Model::setMessages(new ValueType(TYPE_MESSAGE_WARNING, 'You already logged in.'));
+            new Redirect(PAGE_HOME);
+        }
+
         $canBeLoggedIn = true;
         $users = array_filter(Helper::getData(DATA_USERS), [new Callback(KEY_USER_NAME), 'filter']);
         $user = sizeof($users) > 0 ? array_values($users)[0] : null;
@@ -39,7 +44,7 @@ class Login extends Request
             $_SESSION[SESSION_USER_ROLE] = $user[KEY_USER_ROLE];
             $_SESSION[SESSION_USER_NAME] = $user[KEY_USER_NAME];
             $_SESSION[SESSION_USER_TIMEOUT] = time();
-            new Redirect(PAGE_HOME);
+            new Redirect(PAGE_DUTY_LIST);
         }
     }
 }

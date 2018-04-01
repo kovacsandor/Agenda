@@ -10,6 +10,61 @@ class DutyRequest extends Request
 
     protected function action()
     {
+        if (!Helper::isUserLoggedIn()) {
+            Model::setMessages(new ValueType(TYPE_MESSAGE_WARNING, 'You must log in before continuing.'));
+            new Redirect(PAGE_LOGIN);
+        }
+        if (isset($_POST[KEY_LIST_DUTY_REMOVE])) {
+            $this->remove();
+        } elseif (isset($_POST[KEY_LIST_DUTY_SET_DONE])) {
+            $this->setDone();
+        } elseif (isset($_POST[KEY_LIST_DUTY_SET_UNDONE])) {
+            $this->setUndone();
+        } else {
+            $this->add();
+        }
+        new Redirect(PAGE_DUTY_LIST);
+    }
+
+    private function remove()
+    {
+        foreach (file(DATA_DUTIES) as $line) {
+            $duty = unserialize($line);
+            if (json_decode($duty[KEY_ID]) == $_POST[KEY_ID]) {
+                file_put_contents(DATA_DUTIES, str_replace($line, '', file_get_contents(DATA_DUTIES)));
+                break;
+            }
+        }
+    }
+
+    private function setDone()
+    {
+        foreach (file(DATA_DUTIES) as $line) {
+            $duty = unserialize($line);
+            if (json_decode($duty[KEY_ID]) == $_POST[KEY_ID]) {
+                $duty[KEY_DUTY_IS_DONE] = json_encode(VALUE_CHECKBOX_TRUE);
+                $newLine = serialize($duty) . PHP_EOL;
+                file_put_contents(DATA_DUTIES, str_replace($line, $newLine, file_get_contents(DATA_DUTIES)));
+                break;
+            }
+        }
+    }
+
+    private function setUndone()
+    {
+        foreach (file(DATA_DUTIES) as $line) {
+            $duty = unserialize($line);
+            if (json_decode($duty[KEY_ID]) == $_POST[KEY_ID]) {
+                $duty[KEY_DUTY_IS_DONE] = json_encode('');
+                $newLine = serialize($duty) . PHP_EOL;
+                file_put_contents(DATA_DUTIES, str_replace($line, $newLine, file_get_contents(DATA_DUTIES)));
+                break;
+            }
+        }
+    }
+
+    private function add()
+    {
         $canBeAdded = true;
         $title = $_POST[KEY_DUTY_TITLE];
 
@@ -24,7 +79,6 @@ class DutyRequest extends Request
             $_POST['user'] = $_SESSION[SESSION_USER_NAME];
             $message = 'Success, added duty \'' . $title . '\' to database.';
             $this->dataAdd(DATA_DUTIES, 'duty-', $message);
-            new Redirect(PAGE_DUTIES);
         }
     }
 }

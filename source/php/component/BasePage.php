@@ -14,6 +14,7 @@ class BasePage extends Component
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
             <link rel="stylesheet" href="<?php echo URL_STYLESHEET ?>">
             <title><?php echo $this->getDocumentTitle() ?></title>
         </head>
@@ -40,10 +41,10 @@ class BasePage extends Component
             case PAGE_404:
                 $result = LABEL_PAGE_404;
                 break;
-            case PAGE_ADD:
+            case PAGE_DUTY:
                 $result = LABEL_PAGE_ADD;
                 break;
-            case PAGE_DUTIES:
+            case PAGE_DUTY_LIST:
                 $result = LABEL_PAGE_DUTIES;
                 break;
             case PAGE_HOME:

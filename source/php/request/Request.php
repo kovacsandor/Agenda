@@ -13,12 +13,12 @@ abstract class Request
         if ($basename == PAGE_LOG_OUT) {
             new LogOut();
         }
-        if ($basename == PAGE_DUTIES) {
+        if ($basename == PAGE_DUTY_LIST) {
             new DutyList();
         }
         if (sizeof($_POST) > 0) {
             switch ($basename) {
-                case PAGE_ADD:
+                case PAGE_DUTY:
                     new DutyRequest();
                     break;
                 case PAGE_LOGIN:
@@ -37,7 +37,7 @@ abstract class Request
 
     protected function dataAdd($filename, $prefix, $message)
     {
-        $_POST['id'] = uniqid($prefix);
+        $_POST[KEY_ID] = uniqid($prefix);
         foreach ($_POST as $k => $v) {
             $_POST[$k] = json_encode($v);
         }

@@ -1,21 +1,17 @@
-<svg
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        viewBox="0 0 2048 2048"
-        baseProfile="full">
-    <rect
-            y="1408"
-            x="0"
-            height="256"
-            width="2048"/>
-    <rect
-            y="896"
-            x="0"
-            height="256"
-            width="2048"/>
-    <rect
-            y="384"
-            x="0"
-            height="256"
-            width="2048"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     viewBox="0 0 2048 2048"
+     baseProfile="full">
+    <rect y="1408"
+          x="0"
+          height="256"
+          width="2048"/>
+    <rect y="896"
+          x="0"
+          height="256"
+          width="2048"/>
+    <rect y="384"
+          x="0"
+          height="256"
+          width="2048"/>
 </svg>

@@ -10,6 +10,7 @@ class Duty extends Container
     protected function render()
     {
         $body = $this->properties[PROPERTY_DUTY_BODY];
+        $id = $this->properties[PROPERTY_DUTY_ID];
         $isDone = !empty($this->properties[PROPERTY_DUTY_IS_DONE]);
         $priority = $this->properties[PROPERTY_DUTY_PRIORITY];
         $datetime = date('c', $this->properties[PROPERTY_DUTY_TIME]);
@@ -36,14 +37,22 @@ class Duty extends Container
                         <?= $date ?>
                     </time>
                     <p class="<?= P ?>-duty-body <?= $isDone ? P . '--done' : '' ?>"><?= $body ?></p>
-                    <div class="<?= P ?>-button-container">
-                        <button class="<?= P ?>-button <?= $isDone ? '' : P . '--green' ?>">
-                            Mark as <?= $isDone ? 'undone' : 'done' ?>
-                        </button>
-                        <button class="<?= P ?>-button <?= $isDone ? P . '--red' : '' ?>">
-                            Remove
-                        </button>
-                    </div>
+                    <form action="<?= PAGE_DUTY ?>"
+                          method="post">
+                        <input name="<?= KEY_ID ?>"
+                               type="hidden"
+                               value="<?= $id ?>">
+                        <div class="<?= P ?>-button-container">
+                            <input class="<?= P ?>-button <?= $isDone ? '' : P . '--green' ?>"
+                                   name="<?= $isDone ? KEY_LIST_DUTY_SET_UNDONE : KEY_LIST_DUTY_SET_DONE ?>"
+                                   type="submit"
+                                   value="Mark as <?= $isDone ? 'undone' : 'done' ?>">
+                            <input class="<?= P ?>-button <?= $isDone ? P . '--red' : '' ?>"
+                                   name="<?= KEY_LIST_DUTY_REMOVE ?>"
+                                   type="submit"
+                                   value="Remove">
+                        </div>
+                    </form>
                 </div>
             </div>
             <?php

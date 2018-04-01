@@ -10,9 +10,13 @@ class DutyList extends Request
 
     protected function action()
     {
+        if (!Helper::isUserLoggedIn()) {
+            Model::setMessages(new ValueType(TYPE_MESSAGE_WARNING, 'You must log in before continuing.'));
+            new Redirect(PAGE_LOGIN);
+        }
         $sliceLength = 10;
         $all = Helper::getData(DATA_DUTIES);
-        $pageLast = intdiv(sizeof($all), $sliceLength) + 1;
+        $pageLast = intdiv(sizeof($all) - 1, $sliceLength) + 1;
         $page = isset($_GET[GET_PAGE]) && $_GET[GET_PAGE] > 0 ? $_GET[GET_PAGE] : 1;
         $offset = $page > $pageLast ? ($pageLast - 1) * $sliceLength : ($page - 1) * $sliceLength;
         $duties = array_slice($all, $offset, $sliceLength);

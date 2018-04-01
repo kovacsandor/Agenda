@@ -12,23 +12,24 @@ class PageDutyList extends Component
         <section class="<?= P ?>-section <?= P ?>--white">
             <h1><?= LABEL_PAGE_DUTIES ?></h1>
             <?php
-            Component::mount(new Paging([]));
             $duties = Model::getDuties();
             if (sizeof($duties) < 1) {
                 Component::mount(new MessageContainer([
-                    PROPERTY_IS_MESSAGE_PRIVATE => true,
+                    PROPERTY_IS_MESSAGE_PRIVATE => null,
                     PROPERTY_MESSAGES => [[
                         PROPERTY_TYPE => TYPE_MESSAGE_INFO,
                         PROPERTY_VALUE => 'There are no duties found.',
                     ]],
                 ], []));
             } else {
+                Component::mount(new Paging([]));
                 ?>
                 <div class="<?= P ?>-duty-container">
                     <?php
                     foreach ($duties as $duty) {
                         Component::mount(new Duty([
                             PROPERTY_DUTY_BODY => $duty[KEY_DUTY_BODY],
+                            PROPERTY_DUTY_ID => $duty[PROPERTY_DUTY_ID],
                             PROPERTY_DUTY_IS_DONE => $duty[KEY_DUTY_IS_DONE],
                             PROPERTY_DUTY_PRIORITY => $duty[KEY_DUTY_PRIORITY],
                             PROPERTY_DUTY_TIME => $duty[KEY_DUTY_TIME],

@@ -25,10 +25,10 @@ class Main extends Component
                     ], []));
                 }
                 switch (basename($_SERVER['PHP_SELF'])) {
-                    case PAGE_ADD:
+                    case PAGE_DUTY:
                         $page = new PageDuty([]);
                         break;
-                    case PAGE_DUTIES:
+                    case PAGE_DUTY_LIST:
                         $page = new PageDutyList([]);
                         break;
                     case PAGE_HOME:

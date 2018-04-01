@@ -11,5 +11,6 @@ class Redirect
     {
         $_SESSION[SESSION_MESSAGES] = serialize(Model::getMessages());
         header('Location: ' . $page);
+        exit;
     }
 }

@@ -13,8 +13,8 @@ class Model
         $canRegister = $basename == PAGE_REGISTRATION || Helper::isUserAdmin();
         return [
             new MenuItem(LABEL_PAGE_HOME, $basename == PAGE_HOME, true, URL_BASE),
-            new MenuItem(LABEL_PAGE_ADD, $basename == PAGE_ADD, $isUserLoggedIn, PAGE_ADD),
-            new MenuItem(LABEL_PAGE_DUTIES, $basename == PAGE_DUTIES, $isUserLoggedIn, PAGE_DUTIES),
+            new MenuItem(LABEL_PAGE_ADD, $basename == PAGE_DUTY, $isUserLoggedIn, PAGE_DUTY),
+            new MenuItem(LABEL_PAGE_DUTIES, $basename == PAGE_DUTY_LIST, $isUserLoggedIn, PAGE_DUTY_LIST),
             new MenuItem(LABEL_PAGE_LOGIN, $basename == PAGE_LOGIN, !$isUserLoggedIn, PAGE_LOGIN),
             new MenuItem(LABEL_PAGE_REGISTRATION, $basename == PAGE_REGISTRATION, $canRegister, PAGE_REGISTRATION),
             new MenuItem(LABEL_PAGE_LOG_OUT, $basename == PAGE_LOG_OUT, $isUserLoggedIn, PAGE_LOG_OUT),

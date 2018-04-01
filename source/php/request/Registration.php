@@ -10,6 +10,10 @@ class Registration extends Request
 
     protected function action()
     {
+        if (Helper::isUserLoggedIn() && !Helper::isUserAdmin()) {
+            Model::setMessages(new ValueType(TYPE_MESSAGE_WARNING, 'You must log in as an administrator.'));
+            new Redirect(PAGE_LOGIN);
+        }
         $canBeAdded = true;
         $users = Helper::getData(DATA_USERS);
         $names = array_filter($users, [new Callback(KEY_USER_NAME), 'filter']);
@@ -60,24 +64,6 @@ class Registration extends Request
             $message = 'Success, added user \'' . $name . '\' to database.';
             $this->dataAdd(DATA_USERS, 'user-', $message);
             new Redirect(PAGE_LOGIN);
-        }
-    }
-
-//    TODO Delete
-    protected function userGet()
-    {
-        foreach (Helper::getData(DATA_USERS) as $keys) {
-            foreach ($keys as $key => $value) {
-                if (is_array($value)) {
-                    foreach ($value as $k => $v) {
-                        echo $key . ' ' . $k . ': ' . $v;
-                        echo '<br>';
-                    }
-                } else {
-                    echo $key . ': ' . $value;
-                    echo '<br>';
-                }
-            }
         }
     }
 }
