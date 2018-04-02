@@ -1,0 +1,23 @@
+/*! Print */
+
+@media print {
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  header,
+  footer {
+    display: none;
+  }
+
+  main {
+    background: white;
+    padding: 0;
+  }
+
+  .#{$P}-section.#{$P}--white {
+    box-shadow: none;
+    padding: 0;
+  }
+}

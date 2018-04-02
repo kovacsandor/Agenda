@@ -16,7 +16,7 @@ class Login extends Request
         }
 
         $canBeLoggedIn = true;
-        $users = array_filter(Helper::getData(DATA_USERS), [new Callback(KEY_USER_NAME), 'filter']);
+        $users = array_filter(Helper::getData(DATA_USERS), [new Callback(KEY_USER_NAME), CALLBACK_FILTER_POST]);
         $user = sizeof($users) > 0 ? array_values($users)[0] : null;
 
         $name = $_POST[KEY_USER_NAME];
@@ -39,7 +39,7 @@ class Login extends Request
             Model::setMessages(new ValueType(TYPE_MESSAGE_ERROR, 'Password doesn\'t match with user\'s password.'));
         }
         if ($canBeLoggedIn) {
-            $message = 'Success, user \'' . $user[KEY_USER_ROLE] . '\' is logged in.';
+            $message = 'Success, user \'' . $user[KEY_USER_NAME] . '\' is logged in.';
             Model::setMessages(new ValueType(TYPE_MESSAGE_SUCCESS, $message));
             $_SESSION[SESSION_USER_ROLE] = $user[KEY_USER_ROLE];
             $_SESSION[SESSION_USER_NAME] = $user[KEY_USER_NAME];

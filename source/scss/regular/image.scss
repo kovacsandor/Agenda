@@ -1,0 +1,14 @@
+/*! Image */
+
+.#{$P}-image-container {
+  background: $C_GREY_2;
+  margin-bottom: $SIZE;
+  padding: $SIZE 0;
+  text-align: center;
+}
+
+.#{$P}-image {
+  @extend %box-shadow;
+  height: auto;
+  max-width: 100%;
+}

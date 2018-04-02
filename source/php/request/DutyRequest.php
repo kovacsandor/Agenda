@@ -75,8 +75,8 @@ class DutyRequest extends Request
         if ($canBeAdded) {
             $_POST[KEY_DUTY_BODY] = isset($_POST[KEY_DUTY_BODY]) ? $_POST[KEY_DUTY_BODY] : ``;
             $_POST[KEY_DUTY_IS_DONE] = isset($_POST[KEY_DUTY_IS_DONE]) ? $_POST[KEY_DUTY_IS_DONE] : ``;
-            $_POST['time'] = time();
-            $_POST['user'] = $_SESSION[SESSION_USER_NAME];
+            $_POST[KEY_DUTY_TIME] = time();
+            $_POST[KEY_DUTY_USER] = $_SESSION[SESSION_USER_NAME];
             $message = 'Success, added duty \'' . $title . '\' to database.';
             $this->dataAdd(DATA_DUTIES, 'duty-', $message);
         }

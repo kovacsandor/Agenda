@@ -9,8 +9,13 @@ class Callback
         $this->key = $key;
     }
 
-    public function filter($value)
+    public function filterPost($value)
     {
         return $value[$this->key] == $_POST[$this->key];
+    }
+
+    public function filterSession($value)
+    {
+        return $value[$this->key] == $_SESSION[SESSION_USER_NAME];
     }
 }

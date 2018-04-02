@@ -15,7 +15,7 @@ class DutyList extends Request
             new Redirect(PAGE_LOGIN);
         }
         $sliceLength = 10;
-        $all = Helper::getData(DATA_DUTIES);
+        $all = array_filter(Helper::getData(DATA_DUTIES), [new Callback(KEY_DUTY_USER), CALLBACK_FILTER_SESSION]);
         $pageLast = intdiv(sizeof($all) - 1, $sliceLength) + 1;
         $page = isset($_GET[GET_PAGE]) && $_GET[GET_PAGE] > 0 ? $_GET[GET_PAGE] : 1;
         $offset = $page > $pageLast ? ($pageLast - 1) * $sliceLength : ($page - 1) * $sliceLength;

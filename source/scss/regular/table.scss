@@ -1,0 +1,32 @@
+/*! Table */
+
+.#{$P}-table-container {
+  overflow-x: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  text-align: left;
+}
+
+thead {
+  background: $C_BLUE_5;
+  color: $C_BLUE_1;
+  font-weight: 400;
+}
+
+tr {
+
+  * {
+    padding: $SIZE / 2 $SIZE;
+  }
+
+  *:last-child {
+    text-align: right;
+  }
+}
+
+th {
+  font-weight: 400;
+}

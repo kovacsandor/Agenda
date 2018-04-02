@@ -2,6 +2,7 @@
 
 main {
   background: $C_GREY_1;
+  display: block;
   padding: $SIZE * 2 0;
 }
 
@@ -15,5 +16,22 @@ main {
 
   & ~ & {
     margin-top: $SIZE * 2;
+  }
+}
+
+.#{$P}-list {
+  margin-bottom: $SIZE;
+  padding-left: $SIZE * 2;
+
+  li:before {
+
+    border-radius: 50%;
+    content: '';
+    background: $C_BLUE_5;
+    display: block;
+    float: left;
+    margin: 8px $SIZE 0 0;
+    height: $SIZE / 2;
+    width: $SIZE / 2;
   }
 }

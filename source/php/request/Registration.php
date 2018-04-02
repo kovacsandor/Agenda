@@ -16,8 +16,8 @@ class Registration extends Request
         }
         $canBeAdded = true;
         $users = Helper::getData(DATA_USERS);
-        $names = array_filter($users, [new Callback(KEY_USER_NAME), 'filter']);
-        $emails = array_filter($users, [new Callback(KEY_USER_EMAIL), 'filter']);
+        $names = array_filter($users, [new Callback(KEY_USER_NAME), CALLBACK_FILTER_POST]);
+        $emails = array_filter($users, [new Callback(KEY_USER_EMAIL), CALLBACK_FILTER_POST]);
 
         $email = $_POST[KEY_USER_EMAIL];
         $name = $_POST[KEY_USER_NAME];
@@ -62,6 +62,9 @@ class Registration extends Request
         }
         if ($canBeAdded) {
             $message = 'Success, added user \'' . $name . '\' to database.';
+            if (!isset($_POST[KEY_USER_ROLE])) {
+                $_POST[KEY_USER_ROLE] = ROLE_USER;
+            }
             $this->dataAdd(DATA_USERS, 'user-', $message);
             new Redirect(PAGE_LOGIN);
         }

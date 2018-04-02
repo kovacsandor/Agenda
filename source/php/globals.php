@@ -1,7 +1,7 @@
 <?php
 
-define('URL_BASE', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/bt9fs3');
-define('URL_STYLESHEET', URL_BASE . '/css/style.css');
+define('CALLBACK_FILTER_POST', 'filterPost');
+define('CALLBACK_FILTER_SESSION', 'filterSession');
 define('DATA_DUTIES', 'data/duties.txt');
 define('DATA_USERS', 'data/users.txt');
 define('FILE_SVG_LOGO', 'svg/logo.svg');
@@ -18,6 +18,7 @@ define('KEY_DUTY_IS_DONE', 'done');
 define('KEY_DUTY_PRIORITY', 'priority');
 define('KEY_DUTY_TIME', 'time');
 define('KEY_DUTY_TITLE', 'title');
+define('KEY_DUTY_USER', 'user');
 define('KEY_ID', 'id');
 define('KEY_LIST_DUTY_REMOVE', 'remove');
 define('KEY_LIST_DUTY_SET_DONE', 'mark-done');
@@ -73,6 +74,8 @@ define('TYPE_MESSAGE_INFO', 'info');
 define('TYPE_MESSAGE_NEUTRAL', 'neutral');
 define('TYPE_MESSAGE_SUCCESS', 'success');
 define('TYPE_MESSAGE_WARNING', 'warning');
+define('URL_BASE', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/bt9fs3');
+define('URL_STYLESHEET', URL_BASE . '/css/style.css');
 define('VALUE_CHECKBOX_TRUE', 'true');
 define('VALUE_PRIORITY_NEGLIGIBLE', 'negligible');
 define('VALUE_PRIORITY_MODERATE', 'moderate');
